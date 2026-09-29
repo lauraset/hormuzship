@@ -1,0 +1,12 @@
+{
+  "aoi_key": "singapore_strait",
+  "aoi_area_km2": 1845.9311372080358,
+  "n_scenes_intersecting_aoi": 158,
+  "n_scenes_above_threshold": 114,
+  "min_scene_coverage_fraction": 0.3,
+  "n_aoi_detections": 20508,
+  "n_orphan_detections": 722,
+  "n_acquisition_dates": 114,
+  "date_min": "2024-01-10",
+  "date_max": "2026-05-23"
+}

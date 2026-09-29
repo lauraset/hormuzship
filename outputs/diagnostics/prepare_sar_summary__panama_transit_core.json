@@ -1,0 +1,13 @@
+{
+  "aoi_key": "panama_transit_core",
+  "window_tag": null,
+  "aoi_area_km2": 535.1205751584815,
+  "n_scenes_intersecting_aoi": 142,
+  "n_scenes_above_threshold": 0,
+  "min_scene_coverage_fraction": 0.3,
+  "n_aoi_detections": 176,
+  "n_orphan_detections": 3,
+  "n_acquisition_dates": 75,
+  "date_min": "2021-09-06",
+  "date_max": "2024-04-23"
+}

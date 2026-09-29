@@ -1,0 +1,36 @@
+{
+  "type": "FeatureCollection",
+  "name": "english_channel_dover",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "english_channel_dover",
+        "description": "Technical reference corridor for the GFW pipev3 -> pipev4 break test. Dover Strait, the narrowest point of the English Channel commercial lane.",
+        "crs_epsg": 4326,
+        "role": "technical_reference_corridor",
+        "source": "pre_specified_bounding_box",
+        "definition": "bbox [1.25, 50.85, 1.75, 51.15]",
+        "pre_specified": true,
+        "tuned_on_results": false,
+        "purpose": "Test whether the AIS-SAR matching rate also jumps at 2026-03-01 in an unrelated corridor. NOT a causal control for the Hormuz disruption."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [1.25, 50.85],
+            [1.75, 50.85],
+            [1.75, 51.15],
+            [1.25, 51.15],
+            [1.25, 50.85]
+          ]
+        ]
+      }
+    }
+  ]
+}

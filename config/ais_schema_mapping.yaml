@@ -1,0 +1,15 @@
+generated_by: src/02_fetch_ais.py
+generated_at: '2026-09-27T07:20:38.336959+00:00'
+dataset_requested: public-global-presence:v4.0
+verified: false
+auto_detection_unresolved_roles: []
+roles:
+  date: Time Range
+  presence_hours: Vessel Presence Hours
+  vessel_id: Vessel ID
+  vessel_type: Vessel Type
+  gear_type: Gear Type
+  flag: Flag
+  lat: Lat
+  lon: Lon
+  mmsi: MMSI

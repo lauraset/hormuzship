@@ -1,0 +1,4 @@
+source_file,n_orphan_detections,n_distinct_scenes
+sar_vessel_detections_pipev3_202511.csv,60,2
+sar_vessel_detections_pipev3_202512.csv,29,2
+sar_vessel_detections_pipev4_202604.csv,40,2

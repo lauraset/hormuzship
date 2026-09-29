@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "name": "hormuz_core",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "hormuz_core",
+        "name_zh": "霍尔木兹海峡核心区",
+        "description": "Core Strait of Hormuz corridor: Gulf-side approach (Bandar Abbas / Qeshm latitude), the narrowest section near 56.5E, and the Gulf of Oman approach toward Musandam. Polygon is a hand-drawn corridor in EPSG:4326 (WGS84 lon/lat), clockwise, closed.",
+        "crs_epsg": 4326,
+        "role": "primary_aoi",
+        "source": "manual_definition",
+        "valid_from": "2024-01-01",
+        "notes": "Includes some land (Iran, Qeshm, Musandam, UAE coast). Land is inside the AOI area denominator; SAR footprint intersection is computed on the full polygon. Replace this geometry if a water-only AOI is preferred."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [54.95, 27.00],
+            [55.70, 26.98],
+            [56.25, 26.96],
+            [56.62, 26.88],
+            [57.02, 26.52],
+            [57.38, 26.12],
+            [57.90, 25.85],
+            [57.90, 25.30],
+            [57.30, 25.45],
+            [56.90, 25.78],
+            [56.45, 26.15],
+            [56.10, 26.34],
+            [55.52, 26.30],
+            [54.95, 26.36],
+            [54.95, 27.00]
+          ]
+        ]
+      }
+    }
+  ]
+}

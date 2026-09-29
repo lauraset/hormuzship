@@ -1,0 +1,766 @@
+# ============================================================================
+#  Hormuz AIS-vs-SAR observability feasibility test - single source of truth.
+#
+#  RULE: every date, threshold, dataset version and schema assumption used by
+#  any script in src/ must live in this file (or in config/schema_mapping.yaml
+#  which is generated+verified by src/00_inspect_data.py). Never hardcode dates
+#  or thresholds in analysis code.
+# ============================================================================
+
+project:
+  name: hormuz-ais-observability-feasibility
+  phase: 1
+  random_seed: 20260228          # deterministic bootstrap / sampling
+  reference_frame: "UTC"         # GFW timestamps are delivered as UTC strings
+
+paths:
+  # External, read-only GFW archive layout (do not modify).
+  sar_archive_root: "D:/gfwdata"
+  # Local staging directories. Local copies win over the external archive when
+  # the same (kind, month) is found in both places.
+  sar_detections_dir: "data/raw/sar_detections"
+  sar_footprints_dir: "data/raw/sar_footprints"
+  ais_presence_dir: "data/raw/ais_presence"
+  interim_dir: "data/interim"
+  processed_dir: "data/processed"
+  figures_dir: "outputs/figures"
+  tables_dir: "outputs/tables"
+  diagnostics_dir: "outputs/diagnostics"
+  logs_dir: "outputs/logs"
+
+schema:
+  # Written by src/00_inspect_data.py (auto-detected + verified).
+  mapping_file: "config/schema_mapping.yaml"
+  report_json: "outputs/diagnostics/schema_report.json"
+  report_md: "outputs/diagnostics/schema_report.md"
+  # Hard stop: if the detector cannot confirm these roles, later scripts refuse
+  # to run (see src/00_inspect_data.py --strict / REQUIRED_ROLES).
+  required_roles:
+    - scene_id
+    - datetime
+    - latitude
+    - longitude
+    - match_label
+  optional_roles:
+    - footprint_wkt
+    - mmsi
+    - matching_score
+    - presence_score
+    - fishing_score
+    - length_m
+    - matched_category
+
+aoi:
+  # PRIMARY specification. It stays the primary AOI regardless of which AOI
+  # produces a larger effect; nothing here may be reshaped to maximise a signal.
+  primary: "hormuz_core"
+  name_property: "name"
+  expected_crs_epsg: 4326
+  # Equal-area CRS used for every km2 calculation.
+  equal_area_crs: "EPSG:6933"
+  definitions:
+    hormuz_core:
+      geojson: "config/hormuz_core.geojson"
+      primary_feature: "hormuz_core"
+      role: "primary"
+      label: "Hormuz core corridor (primary)"
+      pre_specified: true
+      tuned_on_results: false
+    hormuz_narrow_strait:
+      geojson: "config/hormuz_narrow_strait.geojson"
+      primary_feature: "hormuz_narrow_strait"
+      role: "sensitivity_nested_aoi"
+      label: "Narrow strait transit box (nested sensitivity)"
+      pre_specified: true
+      tuned_on_results: false
+      definition: "fixed bbox 56.25-56.65 E, 26.35-26.70 N"
+    # ---------------------------------------------------------------------
+    # Technical reference corridors for the pipev3 -> pipev4 break test ONLY.
+    # They are NOT causal controls for the Hormuz disruption: they answer a
+    # single measurement question - did AIS-SAR matching jump at 2026-03-01
+    # in unrelated commercial lanes? All three boxes were fixed from geography
+    # before any corridor matching rate was inspected.
+    # ---------------------------------------------------------------------
+    gibraltar_strait:
+      geojson: "config/ref_corridor_gibraltar.geojson"
+      primary_feature: "gibraltar_strait"
+      role: "technical_reference_corridor"
+      label: "Strait of Gibraltar (pipeline reference)"
+      pre_specified: true
+      tuned_on_results: false
+      definition: "fixed bbox -5.85..-5.35 E, 35.85..36.15 N"
+    singapore_strait:
+      geojson: "config/ref_corridor_singapore.geojson"
+      primary_feature: "singapore_strait"
+      role: "technical_reference_corridor"
+      label: "Singapore Strait (pipeline reference)"
+      pre_specified: true
+      tuned_on_results: false
+      definition: "fixed bbox 103.55..104.05 E, 1.10..1.40 N"
+    english_channel_dover:
+      geojson: "config/ref_corridor_dover.geojson"
+      primary_feature: "english_channel_dover"
+      role: "technical_reference_corridor"
+      label: "Dover Strait (pipeline reference)"
+      pre_specified: true
+      tuned_on_results: false
+      definition: "fixed bbox 1.25..1.75 E, 50.85..51.15 N"
+    # ---------------------------------------------------------------------
+    # Phase 4A candidate comparison events. AOIs are defined from geography
+    # and navigation before any matching-rate result from these areas was
+    # inspected; event dates come from documented external chronology.
+    # ---------------------------------------------------------------------
+    suez_canal_core:
+      geojson: "config/event_aoi_suez_canal_core.geojson"
+      primary_feature: "suez_canal_core"
+      role: "event_aoi_multievent"
+      label: "Suez Canal southern single-lane section"
+      pre_specified: true
+      tuned_on_results: false
+      definition: "fixed bbox 32.30..32.65 E, 29.90..30.35 N"
+    bab_el_mandeb_core:
+      geojson: "config/event_aoi_bab_el_mandeb_core.geojson"
+      primary_feature: "bab_el_mandeb_core"
+      role: "event_aoi_multievent"
+      label: "Bab el-Mandeb strait"
+      pre_specified: true
+      tuned_on_results: false
+      definition: "fixed bbox 43.10..43.65 E, 12.30..12.95 N"
+    panama_canal_core:
+      geojson: "config/panama_canal_core.geojson"
+      primary_feature: "panama_canal_core"
+      role: "event_aoi_multievent"
+      label: "Panama Canal transit corridor"
+      pre_specified: true
+      tuned_on_results: false
+      definition: "fixed screening bbox -79.95..-79.50 E, 8.85..9.35 N"
+    panama_transit_core:
+      geojson: "config/panama_transit_core.geojson"
+      primary_feature: "panama_transit_core"
+      role: "sensitivity_nested_aoi"
+      label: "Panama Pacific-side transit corridor (nested sensitivity)"
+      pre_specified: true
+      tuned_on_results: false
+      definition: "fixed bbox -79.72..-79.52 E, 8.88..9.10 N"
+  # Primary AOI outputs keep the plain filenames; every other AOI gets this
+  # suffix so that both specifications can coexist in one outputs tree.
+  non_primary_suffix_template: "__{aoi_key}"
+
+analysis:
+  event_date: "2026-02-28"        # assumed onset of the 2026 Hormuz disruption
+  event_year: 2026
+  # Loading window: files outside this window are never read.
+  load_start: "2024-01-01"
+  load_end: "2026-05-31"
+  # Primary comparison window (2024 is a bonus historical control when present).
+  primary_start: "2025-01-01"
+  primary_end: "2026-05-31"
+  years: [2024, 2025, 2026]
+  event_year_years: [2026]
+  reference_years: [2024, 2025]   # same-location historical controls / placebo
+
+  # Windows are defined as calendar month-day so that the *same* window can be
+  # applied to 2024 / 2025 (placebo split) and 2026 (event split).
+  phases:
+    baseline:
+      start_md: "01-01"
+      end_md: "02-27"
+      label: "Baseline (pre-event)"
+    acute_shock:
+      start_md: "03-01"
+      end_md: "03-27"
+      label: "Acute shock"
+    persistent_disruption:
+      start_md: "03-28"
+      end_md: "05-31"
+      label: "Persistent disruption"
+  pre_post:
+    pre:
+      start_md: "01-01"
+      end_md: "02-27"
+    post:
+      start_md: "03-01"
+      end_md: "05-31"
+
+  # Explicit technical-break calendar. Any break inside the estimation window
+  # must also be modelled (or excluded) in the sensitivity analysis.
+  technical_breaks:
+    - date: "2026-03-01"
+      name: "gfw_sar_pipeline_v3_to_v4_transition"
+      affects: "detection + matching pipeline version"
+      evidence: "local GFW file naming: sar_vessel_detections_pipev3_* through 2026-02, sar_vessel_detections_pipev4_* from 2026-03"
+      detected_from_file_naming: true
+      inside_window: true
+      handling: "primary analysis stops before the next break; pipev4 period is reported separately as sensitivity"
+    - date: "2026-03-28"
+      name: "gfw_sar_ocean_land_mask_update"
+      affects: "ocean-land mask / detection sampling frame"
+      evidence: "user-provided break date"
+      detected_from_file_naming: false
+      inside_window: true
+      handling: "persistent_disruption phase flagged as mask-post; sensitivity split at 2026-03-28"
+    - date: "2026-06-30"
+      name: "sentinel1c_1d_platform_transition"
+      affects: "platform composition (S1C/S1D replace S1A)"
+      evidence: "user-provided break date"
+      detected_from_file_naming: false
+      inside_window: false
+      handling: "out of scope for phase 1 (analysis ends 2026-05-31)"
+
+  # Phase 1 stops here on purpose: no sensor/platform modelling in round one.
+  phase1_end: "2026-05-31"
+
+sar:
+  # ---- file discovery -----------------------------------------------------
+  detection_filename_pattern: "^sar_vessel_detections_pipev(?P<pipeline>[0-9A-Za-z]+)_(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})?\\.csv$"
+  footprint_filename_pattern: "^sar_detections_footprints_(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})?\\.csv$"
+  # GFW ships some months twice (full month + partial re-download). The full
+  # month always wins; the partial file is logged as removed.
+  prefer_full_month_over_partial: true
+  # If two pipelines exist for the same month, prefer the first match here.
+  pipeline_preference: ["v4", "v3", "20231026"]
+
+  # ---- scene / footprint processing --------------------------------------
+  min_scene_coverage_fraction: 0.30   # scene filter, configurable per spec 6.1
+  min_scene_coverage_km2: 0.0
+  require_valid_geometry: true
+  # Some platforms occur in the footprint product while the detection product
+  # contains no detections for them at all (observed: S1C in 2025-10). Those
+  # scenes cannot be read as "zero vessels"; they are detected automatically and
+  # excluded from the primary metrics (never silently).
+  exclude_platforms_without_detections: true
+  platform_diagnostic_min_scenes: 3    # minimum scenes before a platform can be judged
+  # Buffer (degrees) applied to the AOI bbox before the exact spatial filter.
+  detection_bbox_buffer_deg: 0.05
+  # Detections whose scene_id is absent from the footprint table.
+  drop_orphan_detections: false        # keep, but flag them in the scene table
+
+  # ---- metric definitions -------------------------------------------------
+  sar_density_scale_km2: 1000.0        # vessels per 1000 km2 per acquisition
+  # Tokens GFW uses to encode "no value". They are treated as missing: never
+  # silently dropped, never counted as a category, and always reported.
+  null_tokens: ["", "NA", "N/A", "na", "n/a", "nan", "NaN", "none", "None", "NULL", "null", "-"]
+  # Primary AIS-match definition: GFW match label.
+  unmatched_label: "unmatched"
+  # Categories that mean "matched to an AIS identity but with a caveat".
+  matched_caveat_labels: ["discrepancy", "noisy_vessel", "gear"]
+  # Robustness definition: an AIS MMSI was assigned to the detection.
+  alternative_match_role: "mmsi"
+  # Scene-level flag if this share of detections has an unknown match label.
+  unknown_match_warn_rate: 0.01
+  # Length bins (m) for the diagnostic that separates "composition changed" from
+  # "matching changed at a given vessel size". Used by step 03.
+  matching_rate_length_bins_m: [0, 50, 100, 150, 200, 300, 500, 100000]
+  # Coarser bins used for the robustness table (Task B): <50 / 50-100 /
+  # 100-200 / 200-300 / >=300 m.
+  robustness_length_bins_m: [0, 50, 100, 200, 300, 100000]
+  # Below this many detections a cell is flagged as a small sample and no
+  # bootstrap interval is computed.
+  small_sample_min_detections: 30
+
+aggregation:
+  weekly_rule: "iso"                   # ISO weeks, Monday start
+  sar_weekly_statistic: "median"       # weekly median of scene-level SAR density
+  sar_weekly_min_scenes: 1             # a week with 0 scenes stays NA, never 0
+  ais_temporal_resolution: "daily"
+  ais_weekly_statistic: "sum"          # sum of daily presence hours per week
+  epsilon: 1.0                         # for log((x+e)/(y+e)) anomaly ratios
+
+ais:
+  provider: "global_fishing_watch"
+  dataset: "public-global-presence:v4.0"     # pinned version, never "latest"
+  fallback_datasets:
+    - "public-global-presence:v3.0"
+    - "public-global-presence:latest"
+  base_url: "https://gateway.api.globalfishingwatch.org/v3/4wings/report"
+  # ---- request contract, verified live against the API --------------------
+  # POST with query params + a JSON body {"geojson": <AOI feature>}.
+  # geojson is rejected as a query parameter, and format must be upper case.
+  endpoint_method: "POST"
+  # The report API treats date-range end as EXCLUSIVE (`d,d` returns nothing,
+  # `d,d+1` returns exactly one day), so an inclusive window is sent as end+1.
+  date_range_end_exclusive: true
+  # The report response is a ZIP containing the activity CSV, a readme, the GFW
+  # AIS caveats PDF and the reference geometry.
+  response_container: "zip"
+  api_token_env: "GFW_API_TOKEN"
+  spatial_resolution: "HIGH"
+  temporal_resolution: "daily"
+  # The default report already carries vessel-level rows (Vessel ID / MMSI /
+  # Vessel Type / Gear Type / Flag), so no grouping parameter is required.
+  # Leaving this empty is deliberate; the API only accepts the values below.
+  group_by: []
+  allowed_group_by: ["FLAGANDGEARTYPE", "MMSI", "VESSEL_ID", "FLAG", "GEARTYPE"]
+  format: "CSV"
+  schema_mapping_file: "config/ais_schema_mapping.yaml"
+  # Sequential requests only (avoid HTTP 429).
+  request_chunk_months: 1
+  # Observed behaviour (2026-09-27, historical windows): the token allows a
+  # limited number of reports in a short period and then returns HTTP 429 with
+  # "not currently enabled to perform more than one concurrent report", even
+  # though requests are strictly sequential. The pause and the 429-specific
+  # backoff are therefore generous, and a 429 is retried with the longer delay.
+  request_pause_seconds: 20.0
+  max_retries: 4
+  retry_backoff_seconds: 10.0
+  rate_limit_backoff_seconds: 90.0
+  timeout_seconds: 300
+  cache_raw: true
+  manifest_path: "outputs/logs/api_manifest.csv"
+  # Weekly aggregation. Both columns are always written; these settings select
+  # which one each series uses in step 05.
+  #
+  # AIS_all_days uses the weekly SUM, which is safe because AIS coverage is
+  # essentially complete (only 16 of 1764 days lack a row).
+  #
+  # AIS_SAR_days MUST use the MEAN per observed SAR day: restricting to
+  # acquisition days changes how many days enter a week (1-3 typically), so a
+  # weekly sum would confound the activity level with the acquisition frequency
+  # and produce spurious double-digit log declines.
+  weekly_statistic_all_days: "sum"                  # "sum"
+  weekly_statistic_sar_days: "mean_observed_day"    # "mean_observed_day"
+  min_observed_days_per_week_all_days: 3
+  min_observed_days_per_week_sar_days: 1
+  # Vessel-population subsets for the secondary analysis, defined only after
+  # inspecting the real returned categories (see
+  # outputs/tables/ais_vessel_type_summary.csv and ais_gear_type_summary.csv).
+  #
+  # Important schema fact discovered from the live data: the coarse "Vessel Type"
+  # field folds tankers into OTHER_NON_FISHING, whereas "Gear Type" has an
+  # explicit TANKER level (and CARGO_OR_TANKER). The commercial subset is
+  # therefore defined on gear_type, never on vessel_type.
+  vessel_population_sets:
+    - name: "ALL"
+      classification: "all"
+      values: ["__ALL__"]
+    - name: "commercial_gear_types"
+      classification: "gear_type"
+      values: ["TANKER", "CARGO", "CARGO_OR_TANKER"]
+    - name: "non_fishing_gear_types"
+      classification: "gear_type"
+      values:
+        ["TANKER", "CARGO", "CARGO_OR_TANKER", "CARRIER", "BUNKER", "PASSENGER",
+         "OTHER_NON_FISHING", "PATROL_VESSEL", "INACTIVE", "INSUFFICIENT_DATA"]
+    - name: "fishing_gear_types"
+      classification: "gear_type"
+      values:
+        ["GEAR", "FISHING", "TRAWLERS", "DRIFTING_LONGLINES", "DREDGE_NON_FISHING",
+         "SEISMIC_VESSEL"]
+
+stats:
+  bootstrap_iterations: 3000
+  bootstrap_ci_level: 0.95
+  bootstrap_unit: "scene"              # scene-level bootstrap, not pooled ratio
+  bootstrap_method: "percentile"
+  binomial_glm_formula: "matched ~ year + post + year:post"
+  binomial_glm_formula_extended: "matched ~ year + post + year:post + coverage_fraction + C(month)"
+  min_scenes_per_period: 3             # below this the period is reported as unusable
+
+figures:
+  dpi: 200
+  figure_format: "png"
+  style: "matplotlib_default"          # no seaborn, no fixed colour palette
+  annotate_breaks: true
+
+diagnostics:
+  # Read the full global monthly detection files and compute the archive-wide
+  # match-label share. Purpose: decide whether an AOI matching-rate shift is
+  # AOI-specific or caused by a change of the GFW pipeline itself.
+  # This is a measurement-validity check, NOT a causal control region.
+  global_archive_label_check: true
+
+# ============================================================================
+#  PHASE 3 - identification and robustness settings.
+#  Every choice below is fixed BEFORE inspecting event effects.
+# ============================================================================
+identification:
+  # --- spatial composition ------------------------------------------------
+  # Fixed 0.05 deg cells inside the AOI (pre-specified resolution, never tuned
+  # to maximise significance). Cells with fewer than
+  # ``min_detections_per_cell`` detections in the whole window are pooled into
+  # a single "cell_other" level so the model stays estimable.
+  spatial_cell_degrees: 0.05
+  min_detections_per_cell: 30
+  # --- vessel size --------------------------------------------------------
+  # Coarse, interpretable bins. The >=300 m bin is reported but flagged: it has
+  # too few post-event detections to support a substantive claim.
+  length_bins_m: [0, 50, 100, 150, 200, 300, 100000]
+  small_sample_min_detections: 30
+  # --- standardization ----------------------------------------------------
+  # Standardize predicted matching probabilities to the covariate distribution
+  # of this reference cell (pre-event 2026 = the baseline phase).
+  standardize_to_phase: "baseline"
+  standardize_to_year: 2026
+  simulation_draws: 1000          # coefficient draws for the standardized CI
+  # --- matching-term diagnostics -----------------------------------------
+  matching_definition_crosstab: true
+  # --- pipeline falsification --------------------------------------------
+  falsification:
+    break_date: "2026-03-01"
+    before_month: "2026-02"
+    after_month: "2026-03"
+    placebo_pairs: [["2024-02", "2024-03"], ["2025-02", "2025-03"]]
+    # Coarse regions for the global diagnostic (lat/lon boxes, fixed here).
+    regions:
+      north_atlantic:        {lon_min: -80, lon_max: 0,   lat_min: 35,  lat_max: 65}
+      mediterranean:         {lon_min: -6,  lon_max: 36,  lat_min: 30,  lat_max: 46}
+      indian_ocean:          {lon_min: 40,  lon_max: 100, lat_min: -35, lat_max: 25}
+      south_east_asia:       {lon_min: 95,  lon_max: 130, lat_min: -10, lat_max: 25}
+      north_west_europe:     {lon_min: -12, lon_max: 12,  lat_min: 46,  lat_max: 62}
+      north_pacific:         {lon_min: 130, lon_max: 180, lat_min: 15,  lat_max: 55}
+      south_america_atl:     {lon_min: -70, lon_max: -30, lat_min: -55, lat_max: 5}
+      west_africa:           {lon_min: -20, lon_max: 15,  lat_min: -35, lat_max: 20}
+
+# ============================================================================
+#  PHASE 3 - statistical model settings.
+# ============================================================================
+models:
+  # Detection-level logistic regression with standard errors clustered by scene.
+  outcome: "matched_flag"
+  # `period` identifies year x phase with five levels (2024_reference,
+  # 2025_reference, 2026_baseline, 2026_acute, 2026_persistent).
+  #
+  # A literal "matched_flag ~ C(phase) + C(year)" is rank deficient: the 2026
+  # year dummy is exactly the sum of the three 2026 phase dummies, so the design
+  # matrix has no unique solution. The combined factor is the identified form of
+  # the same model; the reason is recorded in formal_matching_models.csv.
+  #
+  # matching_score and MMSI presence are deliberately EXCLUDED as predictors:
+  # both are produced by the matching process itself and are endogenous to the
+  # outcome definition.
+  primary_formula: "matched_flag ~ C(period) + C(length_bin) + C(cell)"
+  # Robustness specification without spatial cells (length composition only).
+  length_only_formula: "matched_flag ~ C(period) + C(length_bin)"
+  # Scene-level grouped robustness model (binomial with scene as the unit).
+  grouped_formula: "matched_share ~ C(period) + C(length_bin)"
+  cluster_variable: "scene_id"
+  max_iterations: 200
+
+# ============================================================================
+#  PHASE 4B - publication-scale multi-event analysis.
+#
+#  Case matrix is FROZEN: no event may be added, dropped or re-defined at this
+#  stage. Phases are calendar month-day windows; a phase whose end month-day
+#  precedes its start crosses the year boundary (Red Sea post, Panama
+#  restricted), and `phase_year_offsets` anchors such phases to the correct year.
+#
+#  `coverage_metric` follows the validated geography rule: open-water chokepoints
+#  keep the bounding-box coverage logic used since Phase 1, while land-heavy
+#  corridors (Panama, Suez) use the footprint-derived water-observable domain.
+#
+#  `standardize_to` names the phase whose covariate distribution is held fixed
+#  when standardizing matching probabilities (the event-year pre phase, exactly
+#  as the frozen Hormuz analysis standardises to its 2026 baseline).
+# ============================================================================
+phase4b:
+  analysis:
+    spatial_cell_degrees: 0.05
+    min_detections_per_cell: 20      # relaxed vs Hormuz: smaller AOIs, fewer cells
+    small_sample_min_detections: 30
+    simulation_draws: 1000
+    cluster_variable: "scene_id"
+    max_iterations: 200
+    # Minimum support for the standardized matching model. Below this the case is
+    # reported as descriptive instead of being fitted on a handful of detections.
+    min_model_detections_per_period: 30
+    min_model_cells: 3
+    formula: "matched_flag ~ C(period) + C(length_bin) + C(cell)"
+    formula_length_only: "matched_flag ~ C(period) + C(length_bin)"
+    # pooling rule for the placebo years: they enter as a single reference level
+    # so the period factor stays estimable in small AOIs. The placebo-only model
+    # is fitted separately to give the seasonal benchmark.
+    pool_placebo_years: true
+  events:
+    # ---------------------------------------------------------------------
+    # The frozen discovery case. Dimension B (the composition-standardized
+    # matching change) is NOT recomputed here: the Phase 3 estimates are frozen
+    # and are carried through explicitly. This entry exists so that the same
+    # SAR-activity and AIS-metric family can be computed for Hormuz on the same
+    # footing as the other cases (the AIS distinct-vessel metrics are new in
+    # Phase 4B and do not exist in the frozen tables).
+    # ---------------------------------------------------------------------
+    hormuz_2026:
+      case_role: "discovery_case"
+      disruption_type: "geopolitical_security"
+      aoi_key: "hormuz_core"
+      event_onset: "2026-03-01"
+      event_label: "Strait of Hormuz disruption (frozen discovery case)"
+      sar_window: ["2024-01-01", "2026-05-31"]
+      sar_window_tag: null
+      coverage_metric: "coverage_fraction"
+      event_phase: "persistent_disruption"
+      phases:
+        baseline:   ["01-01", "02-27"]
+        acute_shock: ["03-01", "03-27"]
+        persistent_disruption: ["03-28", "05-31"]
+      phase_year_offsets: {baseline: 0, acute_shock: 0, persistent_disruption: 0}
+      phase_roles: {baseline: "pre", acute_shock: "event", persistent_disruption: "event"}
+      standardize_to: null          # frozen: the Phase 3 model is not refitted
+      frozen_standardized_pp: -11.538
+      frozen_standardized_ci_low_pp: -17.583
+      frozen_standardized_ci_high_pp: -5.366
+      frozen_raw_pp: -15.294
+      frozen_estimates_source: "outputs/tables/standardized_matching_effects.csv (2026_persistent) and placebo_results.csv (2026 pre/post)"
+      placebo_years: [2024, 2025]
+      pipeline_transition_at_onset: true
+    redsea_2023:
+      case_role: "independent_security_validation"
+      disruption_type: "geopolitical_security"
+      aoi_key: "bab_el_mandeb_core"
+      event_onset: "2023-12-15"
+      event_label: "Red Sea / Bab el-Mandeb shipping disruption"
+      sar_window: ["2021-10-01", "2024-04-30"]
+      sar_window_tag: null
+      coverage_metric: "coverage_fraction"
+      event_phase: "event"
+      phases:
+        pre:   ["10-20", "12-14"]
+        event: ["12-15", "02-15"]
+        post:  ["02-16", "04-15"]
+      phase_year_offsets:
+        pre: 0
+        event: 0
+        post: 1
+      phase_roles: {pre: "pre", event: "event", post: "post"}
+      standardize_to: "pre"
+      placebo_years: [2021, 2022]
+      pipeline_transition_at_onset: false
+    panama_2023:
+      case_role: "non_security_contrast"
+      disruption_type: "climate_capacity_disruption"
+      aoi_key: "panama_canal_core"
+      event_onset: "2023-11-03"
+      event_label: "Panama Canal drought transit restrictions"
+      sar_window: ["2021-09-01", "2024-04-30"]
+      sar_window_tag: null
+      coverage_metric: "coverage_fraction_water"
+      event_phase: "restricted"
+      phases:
+        pre:        ["09-01", "11-02"]
+        restricted: ["11-03", "02-29"]
+        adaptation: ["03-01", "04-30"]
+      phase_year_offsets:
+        pre: 0
+        restricted: 0
+        adaptation: 1
+      phase_roles: {pre: "pre", restricted: "event", adaptation: "post"}
+      standardize_to: "pre"
+      placebo_years: [2021, 2022]
+      pipeline_transition_at_onset: false
+    panama_transit_core_2023:
+      case_role: "non_security_contrast_sensitivity_aoi"
+      disruption_type: "climate_capacity_disruption"
+      aoi_key: "panama_transit_core"
+      event_onset: "2023-11-03"
+      event_label: "Panama transit-core sensitivity AOI"
+      sar_window: ["2021-09-01", "2024-04-30"]
+      sar_window_tag: null
+      coverage_metric: "coverage_fraction_water"
+      event_phase: "restricted"
+      phases:
+        pre:        ["09-01", "11-02"]
+        restricted: ["11-03", "02-29"]
+        adaptation: ["03-01", "04-30"]
+      phase_year_offsets:
+        pre: 0
+        restricted: 0
+        adaptation: 1
+      phase_roles: {pre: "pre", restricted: "event", adaptation: "post"}
+      standardize_to: "pre"
+      placebo_years: [2021, 2022]
+      pipeline_transition_at_onset: false
+    bab_mandeb_2026:
+      case_role: "concurrent_regional_falsification"
+      disruption_type: "geopolitical_security"
+      aoi_key: "bab_el_mandeb_core"
+      event_onset: "2026-03-01"
+      event_label: "Bab el-Mandeb concurrent spillover"
+      sar_window: ["2024-01-01", "2026-05-31"]
+      sar_window_tag: "w2024_2026"
+      coverage_metric: "coverage_fraction"
+      event_phase: "acute"
+      phases:
+        baseline:   ["01-01", "02-27"]
+        acute:      ["03-01", "03-27"]
+        persistent: ["03-28", "05-31"]
+      phase_year_offsets: {baseline: 0, acute: 0, persistent: 0}
+      phase_roles: {baseline: "pre", acute: "event", persistent: "post"}
+      standardize_to: "baseline"
+      placebo_years: [2024, 2025]
+      pipeline_transition_at_onset: true
+    suez_2021:
+      case_role: "supplementary_physical_blockage"
+      disruption_type: "physical_blockage"
+      aoi_key: "suez_canal_core"
+      event_onset: "2021-03-23"
+      event_label: "Suez Canal blockage (Ever Given)"
+      sar_window: ["2019-01-01", "2021-05-31"]
+      sar_window_tag: null
+      coverage_metric: "coverage_fraction_water"
+      event_phase: "blockage"
+      phases:
+        pre:      ["01-26", "03-22"]
+        blockage: ["03-23", "03-29"]
+        backlog:  ["03-30", "05-24"]
+      phase_year_offsets: {pre: 0, blockage: 0, backlog: 0}
+      phase_roles: {pre: "pre", blockage: "event", backlog: "post"}
+      standardize_to: null          # descriptive only: no composition model
+      placebo_years: [2019, 2020]
+      pipeline_transition_at_onset: false
+
+# ============================================================================
+#  PHASE 4A - multi-event feasibility screening.
+#
+#  Purpose: data feasibility and identification checks ONLY. No event effects
+#  are estimated here. Event dates come from documented external chronology and
+#  are frozen before any SAR/AIS result for these areas is inspected.
+#
+#  The Hormuz specification is NOT touched by this section: primary remains
+#  hormuz_core, the narrow AOI remains a pre-specified sensitivity analysis.
+# ============================================================================
+multievent:
+  events:
+    suez_2021:
+      event_type: "canal_blockage"
+      aoi_key: "suez_canal_core"
+      event_date: "2021-03-23"
+      event_window: ["2021-03-23", "2021-03-29"]
+      documented_chronology: >
+        Ever Given grounded 2021-03-23 ~07:40 local in the southern single-lane
+        section; refloated 2021-03-29; canal reopened 2021-03-29 evening; the
+        convoy backlog cleared in the following days. Source: public accident
+        chronology (Suez Canal Authority / press reporting), fixed before data
+        inspection.
+      pre_weeks: 8
+      post_weeks: 8
+      placebo_years: [2019, 2020]
+    red_sea_2023:
+      event_type: "regional_shipping_disruption"
+      aoi_key: "bab_el_mandeb_core"
+      event_date: "2023-12-15"
+      event_window: ["2023-12-15", "2024-02-15"]
+      documented_chronology: >
+        Galaxy Leader hijacked 2023-11-19; attacks on commercial shipping
+        escalated through Nov-Dec 2023; major carriers suspended Red Sea
+        transits around 2023-12-15; Operation Prosperity Guardian announced
+        2023-12-18; sustained Cape of Good Hope rerouting from mid-December 2023
+        onward. Source: public event chronology, fixed before data inspection.
+      pre_weeks: 8
+      post_weeks: 8
+      placebo_years: [2021, 2022]
+  # Screening thresholds - feasibility only, never significance tests.
+  screening:
+    min_event_scenes: 4
+    min_event_detections: 60
+    # Gate on acquisition DAYS inside the event window, not weeks: a 7-day event
+    # (Suez 2021) cannot contain three ISO weeks. Weeks are reported but do not
+    # gate the classification.
+    min_event_acquisition_days: 3
+    # Prolonged event phases additionally need independent acquisition weeks, so a
+    # multi-month disruption is not judged on a single pass.
+    prolonged_phase_days: 28
+    min_event_acquisition_weeks_prolonged: 3
+    min_median_coverage_fraction: 0.30
+    min_placebo_scenes: 4
+    strong_requires_same_pipeline: true
+    strong_requires_placebo: true
+    strong_requires_ais_days: 1
+
+  # ---------------------------------------------------------------------
+  # Phase 4A extension: two additional candidate events.
+  #
+  # Phases are declared as calendar month-day windows so that the event year and
+  # every placebo year use the identical calendar days (the same convention as
+  # the frozen Hormuz specification).
+  #
+  # Case roles are fixed here and must not drift:
+  #   bab_mandeb_2026  = concurrent spillover case under the same regional crisis
+  #                      as Hormuz 2026. NOT an independent validation and NOT a
+  #                      control group.
+  #   panama_2023      = non-security climate/capacity contrast. NOT a negative
+  #                      control.
+  # ---------------------------------------------------------------------
+  extension_events:
+    bab_mandeb_2026:
+      case_role: "concurrent_spillover_case"
+      case_role_note: >
+        Concurrent spillover case under the same regional geopolitical shock as
+        Hormuz 2026 and under the same GFW pipev3 -> pipev4 transition. It is not
+        an independent validation of Hormuz and must never be called a control
+        group.
+      disruption_type: "geopolitical_security"
+      aoi_key: "bab_el_mandeb_core"
+      event_onset: "2026-03-01"
+      event_onset_basis: >
+        Operational decision by major carriers to pause/reroute Trans-Suez
+        sailings through Bab el-Mandeb in response to the escalating regional
+        security situation. Externally defined; not derived from SAR/AIS data.
+      sar_window: ["2024-01-01", "2026-05-31"]
+      sar_window_tag: "w2024_2026"
+      primary_screen_end: "2026-05-31"
+      event_phase: "acute"
+      phases:
+        baseline:   ["01-01", "02-27"]
+        acute:      ["03-01", "03-27"]
+        persistent: ["03-28", "05-31"]
+      phase_roles:
+        baseline: "pre"
+        acute: "event"
+        persistent: "post"
+      placebo_years: [2024, 2025]
+      technical_breaks_in_window:
+        - "2026-03-01 GFW pipev3 -> pipev4 (same boundary as Hormuz 2026)"
+        - "2026-03-28 GFW SAR ocean-land-mask update"
+      # The study onset is exactly the pipeline boundary. Handled the same way as
+      # the frozen Hormuz design: within-event effects must be read against the
+      # historical placebo, and the pipeline change is not differentially
+      # confounded between Hormuz and Bab el-Mandeb because both switch on the
+      # same date.
+      pipeline_transition_at_onset: true
+      # Directly comparable with the frozen Hormuz calendar phases.
+      comparable_to_hormuz_calendar: true
+    panama_2023:
+      case_role: "non_security_contrast"
+      case_role_note: >
+        Non-security, climate/capacity disruption. It is not a negative control:
+        the purpose is to ask whether substantial maritime activity disruption can
+        occur without deterioration in AIS observability.
+      disruption_type: "climate_capacity_disruption"
+      aoi_key: "panama_canal_core"
+      event_onset: "2023-11-03"
+      event_onset_basis: >
+        Onset of the stronger pre-specified transit-restriction regime used for
+        this event study (operational start of the tightened drought-driven
+        booking/slot restrictions announced at the end of October 2023). This is
+        NOT the absolute beginning of the drought crisis: the canal had already
+        implemented earlier drought-related restrictions before November 2023.
+      sar_window: ["2021-09-01", "2024-04-30"]
+      sar_window_tag: null
+      event_phase: "restricted"
+      phases:
+        pre:        ["09-01", "11-02"]
+        restricted: ["11-03", "02-29"]
+        adaptation: ["03-01", "04-30"]
+      # The restricted phase crosses the year boundary, so the adaptation phase
+      # belongs to the calendar year *after* the anchor year of each window.
+      phase_year_offsets:
+        pre: 0
+        restricted: 0
+        adaptation: 1
+      # Expected and verified from the data: the whole window (Sep 2021 - Apr
+      # 2024) lies before the 2024-11 pipeline change, so one generation spans
+      # every phase. Never assumed - it is read from the detection-file tokens.
+      pipeline_transition_at_onset: false
+      phase_roles:
+        pre: "pre"
+        restricted: "event"
+        adaptation: "post"
+      phase_years_note: >
+        The restricted phase crosses the year boundary (Nov 3 -> Feb 29), so each
+        phase is anchored to the year in which it starts: pre in year Y,
+        restricted from Y-11-03 to Y+1-02-29, adaptation in Y+1.
+      placebo_years: [2021, 2022]
+
+logging:
+  level: "INFO"
+  log_file: "outputs/logs/run.log"

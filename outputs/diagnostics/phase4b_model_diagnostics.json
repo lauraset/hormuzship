@@ -1,0 +1,173 @@
+{
+  "events": [
+    "hormuz_2026",
+    "redsea_2023",
+    "panama_2023",
+    "panama_transit_core_2023",
+    "bab_mandeb_2026",
+    "suez_2021"
+  ],
+  "model_settings": {
+    "spatial_cell_degrees": 0.05,
+    "min_detections_per_cell": 20,
+    "small_sample_min_detections": 30,
+    "simulation_draws": 1000,
+    "cluster_variable": "scene_id",
+    "max_iterations": 200,
+    "min_model_detections_per_period": 30,
+    "min_model_cells": 3,
+    "formula": "matched_flag ~ C(period) + C(length_bin) + C(cell)",
+    "formula_length_only": "matched_flag ~ C(period) + C(length_bin)",
+    "pool_placebo_years": true
+  },
+  "diagnostics": {
+    "hormuz_2026": {
+      "aoi_key": "hormuz_core",
+      "coverage_metric": "coverage_fraction",
+      "coverage_threshold": 0.3,
+      "n_detections_usable_scenes": 15299,
+      "n_dropped_unknown_match_label": 0,
+      "n_dropped_missing_length": 0,
+      "n_dropped_outside_windows": 7821,
+      "n_model_rows": 7478,
+      "n_scenes": 104,
+      "n_cells_kept": 197,
+      "n_cells_pooled": 319,
+      "period_counts": {
+        "placebo_reference": 5544,
+        "baseline": 1189,
+        "persistent_disruption": 527,
+        "acute_shock": 218
+      },
+      "phase_scene_counts": {
+        "acute_shock": 19,
+        "baseline": 42,
+        "persistent_disruption": 43
+      },
+      "model_skipped": "frozen case: standardized and raw matching changes are carried through from outputs/tables/standardized_matching_effects.csv (2026_persistent) and placebo_results.csv (2026 pre/post)"
+    },
+    "redsea_2023": {
+      "aoi_key": "bab_el_mandeb_core",
+      "coverage_metric": "coverage_fraction",
+      "coverage_threshold": 0.3,
+      "n_detections_usable_scenes": 1749,
+      "n_dropped_unknown_match_label": 0,
+      "n_dropped_missing_length": 0,
+      "n_dropped_outside_windows": 881,
+      "n_model_rows": 868,
+      "n_scenes": 108,
+      "n_cells_kept": 29,
+      "n_cells_pooled": 40,
+      "period_counts": {
+        "placebo_reference": 595,
+        "pre": 99,
+        "event": 90,
+        "post": 84
+      },
+      "phase_scene_counts": {
+        "event": 39,
+        "post": 35,
+        "pre": 34
+      }
+    },
+    "panama_2023": {
+      "aoi_key": "panama_canal_core",
+      "coverage_metric": "coverage_fraction_water",
+      "coverage_threshold": 0.3,
+      "n_detections_usable_scenes": 1835,
+      "n_dropped_unknown_match_label": 0,
+      "n_dropped_missing_length": 0,
+      "n_dropped_outside_windows": 496,
+      "n_model_rows": 1339,
+      "n_scenes": 105,
+      "n_cells_kept": 5,
+      "n_cells_pooled": 4,
+      "period_counts": {
+        "placebo_reference": 915,
+        "restricted": 205,
+        "adaptation": 123,
+        "pre": 96
+      },
+      "phase_scene_counts": {
+        "adaptation": 29,
+        "pre": 24,
+        "restricted": 52
+      }
+    },
+    "panama_transit_core_2023": {
+      "aoi_key": "panama_transit_core",
+      "coverage_metric": "coverage_fraction_water",
+      "coverage_threshold": 0.3,
+      "n_detections_usable_scenes": 173,
+      "n_dropped_unknown_match_label": 0,
+      "n_dropped_missing_length": 0,
+      "n_dropped_outside_windows": 47,
+      "n_model_rows": 126,
+      "n_scenes": 77,
+      "n_cells_kept": 2,
+      "n_cells_pooled": 3,
+      "period_counts": {
+        "placebo_reference": 94,
+        "restricted": 13,
+        "adaptation": 12,
+        "pre": 7
+      },
+      "phase_scene_counts": {
+        "adaptation": 22,
+        "pre": 17,
+        "restricted": 38
+      },
+      "model_skipped": "insufficient sample support for the standardized model: periods below 30 detections = {'restricted': 13, 'adaptation': 12, 'pre': 7}; cells kept = 2 (minimum 3)"
+    },
+    "bab_mandeb_2026": {
+      "aoi_key": "bab_el_mandeb_core",
+      "coverage_metric": "coverage_fraction",
+      "coverage_threshold": 0.3,
+      "n_detections_usable_scenes": 1139,
+      "n_dropped_unknown_match_label": 0,
+      "n_dropped_missing_length": 0,
+      "n_dropped_outside_windows": 536,
+      "n_model_rows": 603,
+      "n_scenes": 99,
+      "n_cells_kept": 26,
+      "n_cells_pooled": 43,
+      "period_counts": {
+        "placebo_reference": 355,
+        "persistent": 103,
+        "baseline": 95,
+        "acute": 50
+      },
+      "phase_scene_counts": {
+        "acute": 19,
+        "baseline": 37,
+        "persistent": 43
+      }
+    },
+    "suez_2021": {
+      "aoi_key": "suez_canal_core",
+      "coverage_metric": "coverage_fraction_water",
+      "coverage_threshold": 0.3,
+      "n_detections_usable_scenes": 1875,
+      "n_dropped_unknown_match_label": 0,
+      "n_dropped_missing_length": 0,
+      "n_dropped_outside_windows": 1008,
+      "n_model_rows": 867,
+      "n_scenes": 206,
+      "n_cells_kept": 8,
+      "n_cells_pooled": 3,
+      "period_counts": {
+        "placebo_reference": 534,
+        "backlog": 159,
+        "pre": 117,
+        "blockage": 57
+      },
+      "phase_scene_counts": {
+        "backlog": 102,
+        "blockage": 12,
+        "pre": 92
+      },
+      "model_skipped": "standardize_to is null (descriptive case)"
+    }
+  },
+  "note": "Dimension A = SAR activity anomaly; Dimension B = composition-standardized matching change. The two are never combined into a composite index."
+}

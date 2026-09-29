@@ -1,0 +1,40 @@
+{
+  "figures_produced": [
+    "fig_phase2_01_ais_all_days_anomaly.png",
+    "fig_phase2_02_ais_sar_days_anomaly.png",
+    "fig_phase2_03_sar_density_anomaly.png",
+    "fig_phase2_04_ais_all_days_vs_sar.png",
+    "fig_phase2_05_ais_sar_days_vs_sar.png",
+    "fig_phase2_06_observability_gap.png",
+    "fig_phase2_07_matching_rate_and_gap.png",
+    "fig_phase3_length_distribution_hormuz_core.png",
+    "fig_phase3_spatial_distribution_hormuz_core.png",
+    "fig_phase3_length_distribution_hormuz_narrow_strait.png",
+    "fig_phase3_spatial_distribution_hormuz_narrow_strait.png",
+    "fig_phase3_standardized_matching_hormuz_core.png",
+    "fig_phase3_standardized_matching_hormuz_narrow_strait.png",
+    "fig_phase3_divergence_alignment.png"
+  ],
+  "aois": [
+    "hormuz_core",
+    "hormuz_narrow_strait",
+    "gibraltar_strait",
+    "singapore_strait",
+    "english_channel_dover"
+  ],
+  "primary_aoi": "hormuz_core",
+  "annotated_breaks": [
+    {
+      "date": "2026-02-28",
+      "label": "event onset"
+    },
+    {
+      "date": "2026-03-01",
+      "label": "pipeline v3 to v4 transition"
+    },
+    {
+      "date": "2026-03-28",
+      "label": "ocean land mask update"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+aoi_key,aoi_role,year_group,phase,length_bin,length_bin_left_m,length_bin_right_m,n_total,n_matched,n_unmatched,n_unknown,matching_rate,ci_low,ci_high,ci_computed,small_sample,small_sample_threshold,median_length_m,note
+hormuz_core,primary,2026,acute_shock,"[0,50)",0.0,50.0,66,17,49,0,0.25757575757575757,0.15151515151515152,0.36363636363636365,True,False,30,25.587204,
+hormuz_core,primary,2026,acute_shock,"[50,100)",50.0,100.0,47,16,31,0,0.3404255319148936,0.2127659574468085,0.48936170212765956,True,False,30,66.8826065,
+hormuz_core,primary,2026,acute_shock,"[100,200)",100.0,200.0,69,12,57,0,0.17391304347826086,0.08695652173913043,0.2753623188405797,True,False,30,161.323822,
+hormuz_core,primary,2026,acute_shock,"[200,300)",200.0,300.0,32,7,25,0,0.21875,0.09375,0.375,True,False,30,237.67368299999998,
+hormuz_core,primary,2026,acute_shock,"[300,100000)",300.0,100000.0,4,0,4,0,0.0,,,False,True,30,319.4483795,small sample: 4 classified detections (< 30); do not over-interpret
+hormuz_core,primary,2026,baseline,"[0,50)",0.0,50.0,286,71,215,0,0.24825174825174826,0.1993006993006993,0.2972027972027972,True,False,30,22.5594902,
+hormuz_core,primary,2026,baseline,"[50,100)",50.0,100.0,172,104,68,0,0.6046511627906976,0.5290697674418605,0.6802325581395349,True,False,30,72.84251405,
+hormuz_core,primary,2026,baseline,"[100,200)",100.0,200.0,431,219,212,0,0.5081206496519721,0.4617169373549884,0.5522041763341067,True,False,30,152.563644,
+hormuz_core,primary,2026,baseline,"[200,300)",200.0,300.0,231,130,101,0,0.5627705627705628,0.49783549783549785,0.6277056277056277,True,False,30,252.399033,
+hormuz_core,primary,2026,baseline,"[300,100000)",300.0,100000.0,69,35,34,0,0.5072463768115942,0.391304347826087,0.6235507246376825,True,False,30,322.897736,
+hormuz_core,primary,2026,persistent_disruption,"[0,50)",0.0,50.0,217,43,174,0,0.19815668202764977,0.14746543778801843,0.2534562211981567,True,False,30,22.1632919,
+hormuz_core,primary,2026,persistent_disruption,"[50,100)",50.0,100.0,142,65,76,1,0.46099290780141844,0.3732394366197183,0.5428571428571428,True,False,30,68.3018706,
+hormuz_core,primary,2026,persistent_disruption,"[100,200)",100.0,200.0,109,59,50,0,0.5412844036697247,0.44954128440366975,0.6330275229357798,True,False,30,137.09642,
+hormuz_core,primary,2026,persistent_disruption,"[200,300)",200.0,300.0,48,15,33,0,0.3125,0.1875,0.4375,True,False,30,234.812103,
+hormuz_core,primary,2026,persistent_disruption,"[300,100000)",300.0,100000.0,11,2,9,0,0.18181818181818182,,,False,True,30,319.656036,small sample: 11 classified detections (< 30); do not over-interpret
+hormuz_core,primary,reference_2024_2025,acute_shock,"[0,50)",0.0,50.0,342,70,272,0,0.2046783625730994,0.16374269005847952,0.24853801169590642,True,False,30,22.522513349999997,
+hormuz_core,primary,reference_2024_2025,acute_shock,"[50,100)",50.0,100.0,118,70,48,0,0.5932203389830508,0.5,0.6779661016949152,True,False,30,73.1899109,
+hormuz_core,primary,reference_2024_2025,acute_shock,"[100,200)",100.0,200.0,305,186,119,0,0.6098360655737705,0.5540983606557377,0.6655737704918033,True,False,30,152.388184,
+hormuz_core,primary,reference_2024_2025,acute_shock,"[200,300)",200.0,300.0,192,134,58,0,0.6979166666666666,0.6302083333333334,0.7604166666666666,True,False,30,233.7848055,
+hormuz_core,primary,reference_2024_2025,acute_shock,"[300,100000)",300.0,100000.0,55,44,11,0,0.8,0.6909090909090909,0.9090909090909091,True,False,30,322.552582,
+hormuz_core,primary,reference_2024_2025,baseline,"[0,50)",0.0,50.0,620,145,475,0,0.23387096774193547,0.2,0.267741935483871,True,False,30,22.05878735,
+hormuz_core,primary,reference_2024_2025,baseline,"[50,100)",50.0,100.0,275,152,123,0,0.5527272727272727,0.49454545454545457,0.610909090909091,True,False,30,73.1940384,
+hormuz_core,primary,reference_2024_2025,baseline,"[100,200)",100.0,200.0,677,399,278,0,0.5893648449039882,0.552437223042836,0.6262924667651403,True,False,30,159.374252,
+hormuz_core,primary,reference_2024_2025,baseline,"[200,300)",200.0,300.0,358,235,123,0,0.6564245810055865,0.6061452513966481,0.7067039106145251,True,False,30,240.8806915,
+hormuz_core,primary,reference_2024_2025,baseline,"[300,100000)",300.0,100000.0,94,76,18,0,0.8085106382978723,0.723404255319149,0.8829787234042553,True,False,30,317.9287875,
+hormuz_core,primary,reference_2024_2025,persistent_disruption,"[0,50)",0.0,50.0,880,232,648,0,0.2636363636363636,0.2340909090909091,0.29318181818181815,True,False,30,21.8678236,
+hormuz_core,primary,reference_2024_2025,persistent_disruption,"[50,100)",50.0,100.0,276,193,83,0,0.6992753623188406,0.644927536231884,0.7536231884057971,True,False,30,73.38200375,
+hormuz_core,primary,reference_2024_2025,persistent_disruption,"[100,200)",100.0,200.0,722,423,299,0,0.5858725761772853,0.5484764542936288,0.6218836565096952,True,False,30,155.22370899999999,
+hormuz_core,primary,reference_2024_2025,persistent_disruption,"[200,300)",200.0,300.0,434,289,145,0,0.6658986175115207,0.619815668202765,0.7096774193548387,True,False,30,239.8763735,
+hormuz_core,primary,reference_2024_2025,persistent_disruption,"[300,100000)",300.0,100000.0,137,90,47,0,0.656934306569343,0.5766423357664233,0.7372262773722628,True,False,30,317.471252,
+hormuz_narrow_strait,sensitivity_nested_aoi,2026,acute_shock,"[50,100)",50.0,100.0,1,0,1,0,0.0,,,False,True,30,55.859211,small sample: 1 classified detections (< 30); do not over-interpret
+hormuz_narrow_strait,sensitivity_nested_aoi,2026,acute_shock,"[100,200)",100.0,200.0,6,1,5,0,0.16666666666666666,,,False,True,30,173.8789295,small sample: 6 classified detections (< 30); do not over-interpret
+hormuz_narrow_strait,sensitivity_nested_aoi,2026,baseline,"[0,50)",0.0,50.0,25,14,11,0,0.56,,,False,True,30,25.2132225,small sample: 25 classified detections (< 30); do not over-interpret
+hormuz_narrow_strait,sensitivity_nested_aoi,2026,baseline,"[50,100)",50.0,100.0,34,26,8,0,0.7647058823529411,0.6176470588235294,0.8823529411764706,True,False,30,71.48374725,
+hormuz_narrow_strait,sensitivity_nested_aoi,2026,baseline,"[100,200)",100.0,200.0,76,67,9,0,0.881578947368421,0.8026315789473685,0.9473684210526315,True,False,30,162.335411,
+hormuz_narrow_strait,sensitivity_nested_aoi,2026,baseline,"[200,300)",200.0,300.0,50,47,3,0,0.94,0.86,1.0,True,False,30,235.454376,
+hormuz_narrow_strait,sensitivity_nested_aoi,2026,baseline,"[300,100000)",300.0,100000.0,13,13,0,0,1.0,,,False,True,30,324.684753,small sample: 13 classified detections (< 30); do not over-interpret
+hormuz_narrow_strait,sensitivity_nested_aoi,2026,persistent_disruption,"[0,50)",0.0,50.0,10,0,10,0,0.0,,,False,True,30,20.93274495,small sample: 10 classified detections (< 30); do not over-interpret
+hormuz_narrow_strait,sensitivity_nested_aoi,2026,persistent_disruption,"[50,100)",50.0,100.0,2,2,0,0,1.0,,,False,True,30,75.53752515,small sample: 2 classified detections (< 30); do not over-interpret
+hormuz_narrow_strait,sensitivity_nested_aoi,2026,persistent_disruption,"[100,200)",100.0,200.0,2,0,2,0,0.0,,,False,True,30,146.77241550000002,small sample: 2 classified detections (< 30); do not over-interpret
+hormuz_narrow_strait,sensitivity_nested_aoi,2026,persistent_disruption,"[200,300)",200.0,300.0,3,0,3,0,0.0,,,False,True,30,277.590759,small sample: 3 classified detections (< 30); do not over-interpret
+hormuz_narrow_strait,sensitivity_nested_aoi,2026,persistent_disruption,"[300,100000)",300.0,100000.0,2,0,2,0,0.0,,,False,True,30,307.309082,small sample: 2 classified detections (< 30); do not over-interpret
+hormuz_narrow_strait,sensitivity_nested_aoi,reference_2024_2025,acute_shock,"[0,50)",0.0,50.0,44,7,37,0,0.1590909090909091,0.06818181818181818,0.2727272727272727,True,False,30,22.386938999999998,
+hormuz_narrow_strait,sensitivity_nested_aoi,reference_2024_2025,acute_shock,"[50,100)",50.0,100.0,17,16,1,0,0.9411764705882353,,,False,True,30,76.8465271,small sample: 17 classified detections (< 30); do not over-interpret
+hormuz_narrow_strait,sensitivity_nested_aoi,reference_2024_2025,acute_shock,"[100,200)",100.0,200.0,72,64,8,0,0.8888888888888888,0.8055555555555556,0.9583333333333334,True,False,30,156.218048,
+hormuz_narrow_strait,sensitivity_nested_aoi,reference_2024_2025,acute_shock,"[200,300)",200.0,300.0,49,49,0,0,1.0,1.0,1.0,True,False,30,235.528519,
+hormuz_narrow_strait,sensitivity_nested_aoi,reference_2024_2025,acute_shock,"[300,100000)",300.0,100000.0,10,10,0,0,1.0,,,False,True,30,316.1161805,small sample: 10 classified detections (< 30); do not over-interpret
+hormuz_narrow_strait,sensitivity_nested_aoi,reference_2024_2025,baseline,"[0,50)",0.0,50.0,69,26,43,0,0.37681159420289856,0.2608695652173913,0.4927536231884058,True,False,30,22.3047905,
+hormuz_narrow_strait,sensitivity_nested_aoi,reference_2024_2025,baseline,"[50,100)",50.0,100.0,35,28,7,0,0.8,0.6571428571428571,0.9142857142857143,True,False,30,74.4142075,
+hormuz_narrow_strait,sensitivity_nested_aoi,reference_2024_2025,baseline,"[100,200)",100.0,200.0,175,152,23,0,0.8685714285714285,0.8171428571428572,0.92,True,False,30,166.043335,
+hormuz_narrow_strait,sensitivity_nested_aoi,reference_2024_2025,baseline,"[200,300)",200.0,300.0,108,103,5,0,0.9537037037037037,0.9074074074074074,0.9907407407407407,True,False,30,232.6340945,
+hormuz_narrow_strait,sensitivity_nested_aoi,reference_2024_2025,baseline,"[300,100000)",300.0,100000.0,29,28,1,0,0.9655172413793104,,,False,True,30,322.779633,small sample: 29 classified detections (< 30); do not over-interpret
+hormuz_narrow_strait,sensitivity_nested_aoi,reference_2024_2025,persistent_disruption,"[0,50)",0.0,50.0,78,36,42,0,0.46153846153846156,0.34615384615384615,0.5769230769230769,True,False,30,23.073452,
+hormuz_narrow_strait,sensitivity_nested_aoi,reference_2024_2025,persistent_disruption,"[50,100)",50.0,100.0,36,32,4,0,0.8888888888888888,0.7777777777777778,0.9722222222222222,True,False,30,75.9397583,
+hormuz_narrow_strait,sensitivity_nested_aoi,reference_2024_2025,persistent_disruption,"[100,200)",100.0,200.0,168,150,18,0,0.8928571428571429,0.8452380952380952,0.9345238095238095,True,False,30,172.377937,
+hormuz_narrow_strait,sensitivity_nested_aoi,reference_2024_2025,persistent_disruption,"[200,300)",200.0,300.0,113,108,5,0,0.9557522123893806,0.911504424778761,0.9911504424778761,True,False,30,235.176758,
+hormuz_narrow_strait,sensitivity_nested_aoi,reference_2024_2025,persistent_disruption,"[300,100000)",300.0,100000.0,32,30,2,0,0.9375,0.84375,1.0,True,False,30,326.0515135,

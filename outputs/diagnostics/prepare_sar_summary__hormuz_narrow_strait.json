@@ -1,0 +1,12 @@
+{
+  "aoi_key": "hormuz_narrow_strait",
+  "aoi_area_km2": 1546.001066090162,
+  "n_scenes_intersecting_aoi": 215,
+  "n_scenes_above_threshold": 215,
+  "min_scene_coverage_fraction": 0.3,
+  "n_aoi_detections": 2729,
+  "n_orphan_detections": 33,
+  "n_acquisition_dates": 215,
+  "date_min": "2024-01-02",
+  "date_max": "2026-05-23"
+}

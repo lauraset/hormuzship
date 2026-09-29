@@ -1,0 +1,4 @@
+period,n_detections,n_scenes,observed_matching_rate,standardized_matching_probability,standardized_ci_low,standardized_ci_high,standardized_change_vs_target_pp,standardized_change_ci_low_pp,standardized_change_ci_high_pp,standardization_target,coefficient_draws,event,aoi_key,case_role
+pre,99,11,0.8686868686868687,0.8686868686871928,0.8066497407551695,0.9004647687771431,0.8097306815114891,0.0,0.0,pre,1000,redsea_2023,bab_el_mandeb_core,independent_security_validation
+event,90,14,0.8,0.7571818566684955,0.6563463483136533,0.8087608659079633,-10.340770520358245,-21.67129564253019,-3.0916034744066065,pre,1000,redsea_2023,bab_el_mandeb_core,independent_security_validation
+post,84,13,0.8452380952380952,0.836150375480188,0.7235384355610799,0.8868271487351054,-2.443918639188991,-14.885454842438302,4.845202447398227,pre,1000,redsea_2023,bab_el_mandeb_core,independent_security_validation

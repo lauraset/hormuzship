@@ -1,0 +1,38 @@
+{
+  "type": "FeatureCollection",
+  "name": "panama_transit_core",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "panama_transit_core",
+        "description": "Nested sensitivity AOI for the Panama drought study: the Pacific-side active transit corridor - Miraflores and Pedro Miguel locks, the Gaillard (Culebra) Cut and its northern approach - deliberately excluding Gatun Lake and the Pacific gulf anchorages where restricted vessels wait.",
+        "crs_epsg": 4326,
+        "role": "sensitivity_nested_aoi",
+        "source": "geography_defined",
+        "definition": "fixed bbox [-79.72, 8.88, -79.52, 9.10]",
+        "pre_specified": true,
+        "defined_before_results": true,
+        "tuned_on_results": false,
+        "navigation_rationale": "Northbound convoys wait in the Pacific anchorages (west of -79.60, south of 8.95) and southbound convoys wait in Gatun Lake (north of 9.15). Both waiting areas are outside this box, so a restriction-driven increase in dwell should not appear here, while the physical transit corridor itself is captured. Chosen from the navigation chart before inspecting any Phase 4B effect.",
+        "caveat": "The corridor is a thin water strip inside a mostly land box, so water-normalized coverage is mandatory."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-79.72, 8.88],
+            [-79.52, 8.88],
+            [-79.52, 9.10],
+            [-79.72, 9.10],
+            [-79.72, 8.88]
+          ]
+        ]
+      }
+    }
+  ]
+}

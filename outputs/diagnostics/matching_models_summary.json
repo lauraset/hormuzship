@@ -1,0 +1,155 @@
+{
+  "primary_formula": "matched_flag ~ C(period) + C(length_bin) + C(cell)",
+  "length_only_formula": "matched_flag ~ C(period) + C(length_bin)",
+  "grouped_formula": "matched_share ~ C(period) + C(length_bin)",
+  "cluster_variable": "scene_id",
+  "standardize_to_phase": "baseline",
+  "spatial_cell_degrees": 0.05,
+  "min_detections_per_cell": 30,
+  "excluded_predictors": [
+    "matching_score",
+    "mmsi_present"
+  ],
+  "excluded_predictor_reason": "both are produced by the matching process and are endogenous to the outcome",
+  "frame_diagnostics": {
+    "hormuz_core": {
+      "aoi_key": "hormuz_core",
+      "n_detections_usable_scenes": 15299,
+      "n_dropped_unknown_match_label": 0,
+      "n_dropped_missing_length": 0,
+      "n_dropped_outside_calendar_windows": 7880,
+      "n_model_rows": 7419,
+      "n_scenes": 103,
+      "n_cells_kept": 153,
+      "n_cells_pooled_to_cell_other": 363,
+      "min_detections_per_cell": 30,
+      "spatial_cell_degrees": 0.05,
+      "period_counts": {
+        "2025_reference": 2953,
+        "2024_reference": 2532,
+        "2026_baseline": 1189,
+        "2026_persistent": 527,
+        "2026_acute": 218
+      },
+      "period_scene_counts": {
+        "2024_reference": 35,
+        "2025_reference": 34,
+        "2026_baseline": 14,
+        "2026_acute": 6,
+        "2026_persistent": 14
+      }
+    },
+    "hormuz_narrow_strait": {
+      "aoi_key": "hormuz_narrow_strait",
+      "n_detections_usable_scenes": 2696,
+      "n_dropped_unknown_match_label": 0,
+      "n_dropped_missing_length": 0,
+      "n_dropped_outside_calendar_windows": 1437,
+      "n_model_rows": 1259,
+      "n_scenes": 103,
+      "n_cells_kept": 27,
+      "n_cells_pooled_to_cell_other": 27,
+      "min_detections_per_cell": 30,
+      "spatial_cell_degrees": 0.05,
+      "period_counts": {
+        "2024_reference": 519,
+        "2025_reference": 516,
+        "2026_baseline": 198,
+        "2026_persistent": 19,
+        "2026_acute": 7
+      },
+      "period_scene_counts": {
+        "2024_reference": 37,
+        "2025_reference": 34,
+        "2026_baseline": 14,
+        "2026_acute": 6,
+        "2026_persistent": 12
+      }
+    }
+  },
+  "standardized_2026": [
+    {
+      "aoi_key": "hormuz_core",
+      "period": "2026_baseline",
+      "n_detections": 1189,
+      "observed_matching_rate": 0.4701429772918419,
+      "standardized_matching_probability": 0.4701429772920885,
+      "standardized_ci_low": 0.4483942200152198,
+      "standardized_ci_high": 0.49109490527669053,
+      "observed_difference_vs_baseline_pp": 0.0,
+      "standardized_difference_vs_baseline_pp": 0.0,
+      "standardized_difference_ci_low_pp": 0.0,
+      "standardized_difference_ci_high_pp": 0.0
+    },
+    {
+      "aoi_key": "hormuz_core",
+      "period": "2026_acute",
+      "n_detections": 218,
+      "observed_matching_rate": 0.23853211009174313,
+      "standardized_matching_probability": 0.285888667297001,
+      "standardized_ci_low": 0.19880778991711948,
+      "standardized_ci_high": 0.3757417021426947,
+      "observed_difference_vs_baseline_pp": -23.161086720009877,
+      "standardized_difference_vs_baseline_pp": -18.425430999508745,
+      "standardized_difference_ci_low_pp": -27.87493477265894,
+      "standardized_difference_ci_high_pp": -9.227887903992007
+    },
+    {
+      "aoi_key": "hormuz_core",
+      "period": "2026_persistent",
+      "n_detections": 527,
+      "observed_matching_rate": 0.349146110056926,
+      "standardized_matching_probability": 0.35476426080670037,
+      "standardized_ci_low": 0.29792291729198694,
+      "standardized_ci_high": 0.4123970777212632,
+      "observed_difference_vs_baseline_pp": -12.099686723491592,
+      "standardized_difference_vs_baseline_pp": -11.537871648538811,
+      "standardized_difference_ci_low_pp": -17.58280090721841,
+      "standardized_difference_ci_high_pp": -5.366186099444277
+    },
+    {
+      "aoi_key": "hormuz_narrow_strait",
+      "period": "2026_baseline",
+      "n_detections": 198,
+      "observed_matching_rate": 0.8434343434343434,
+      "standardized_matching_probability": 0.8434343434329793,
+      "standardized_ci_low": 0.7878687425881734,
+      "standardized_ci_high": 0.8720378348460588,
+      "observed_difference_vs_baseline_pp": 0.0,
+      "standardized_difference_vs_baseline_pp": 0.0,
+      "standardized_difference_ci_low_pp": 0.0,
+      "standardized_difference_ci_high_pp": 0.0
+    },
+    {
+      "aoi_key": "hormuz_narrow_strait",
+      "period": "2026_acute",
+      "n_detections": 7,
+      "observed_matching_rate": 0.14285714285714285,
+      "standardized_matching_probability": 0.23987047582231535,
+      "standardized_ci_low": 0.05989966585210643,
+      "standardized_ci_high": 0.6140285074955245,
+      "observed_difference_vs_baseline_pp": -70.05772005772006,
+      "standardized_difference_vs_baseline_pp": -60.356386761066396,
+      "standardized_difference_ci_low_pp": -77.92706763051407,
+      "standardized_difference_ci_high_pp": -21.86667168897974
+    },
+    {
+      "aoi_key": "hormuz_narrow_strait",
+      "period": "2026_persistent",
+      "n_detections": 19,
+      "observed_matching_rate": 0.10526315789473684,
+      "standardized_matching_probability": 0.20556735366899198,
+      "standardized_ci_low": 0.03750749569630184,
+      "standardized_ci_high": 0.6196535005975133,
+      "observed_difference_vs_baseline_pp": -73.81711855396065,
+      "standardized_difference_vs_baseline_pp": -63.786698976398725,
+      "standardized_difference_ci_low_pp": -79.95366185349867,
+      "standardized_difference_ci_high_pp": -20.609189617805875
+    }
+  ],
+  "aois": [
+    "hormuz_core",
+    "hormuz_narrow_strait"
+  ],
+  "primary_aoi": "hormuz_core"
+}

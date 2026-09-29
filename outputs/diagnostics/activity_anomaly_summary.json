@@ -1,0 +1,65 @@
+{
+  "ais_value_column": "sum",
+  "epsilon": 1.0,
+  "event_year": 2026,
+  "reference_years": [
+    2024,
+    2025
+  ],
+  "event_year_mean_anomalies": [
+    {
+      "aoi": "hormuz_core",
+      "series": "AIS_all_days|ALL",
+      "n_event_weeks": 22,
+      "mean_log_anomaly_event": -0.7310157290009941
+    },
+    {
+      "aoi": "hormuz_core",
+      "series": "AIS_SAR_days|ALL",
+      "n_event_weeks": 21,
+      "mean_log_anomaly_event": -0.6654321102832433
+    },
+    {
+      "aoi": "hormuz_core",
+      "series": "SAR_ALL_detections",
+      "n_event_weeks": 21,
+      "mean_log_anomaly_event": -0.33241458654622696
+    },
+    {
+      "aoi": "hormuz_narrow_strait",
+      "series": "AIS_all_days|ALL",
+      "n_event_weeks": 22,
+      "mean_log_anomaly_event": -2.2628540468939806
+    },
+    {
+      "aoi": "hormuz_narrow_strait",
+      "series": "AIS_SAR_days|ALL",
+      "n_event_weeks": 21,
+      "mean_log_anomaly_event": -2.310828805552942
+    },
+    {
+      "aoi": "hormuz_narrow_strait",
+      "series": "SAR_ALL_detections",
+      "n_event_weeks": 21,
+      "mean_log_anomaly_event": -1.0936054956618717
+    }
+  ],
+  "series_available": [
+    "AIS_SAR_days|ALL",
+    "AIS_SAR_days|commercial_gear_types",
+    "AIS_SAR_days|fishing_gear_types",
+    "AIS_SAR_days|non_fishing_gear_types",
+    "AIS_all_days|ALL",
+    "AIS_all_days|commercial_gear_types",
+    "AIS_all_days|fishing_gear_types",
+    "AIS_all_days|non_fishing_gear_types",
+    "SAR_ALL_detections",
+    "SAR_length_ge_100m",
+    "SAR_length_ge_50m"
+  ],
+  "aois": [
+    "hormuz_core",
+    "hormuz_narrow_strait"
+  ],
+  "primary_aoi": "hormuz_core"
+}

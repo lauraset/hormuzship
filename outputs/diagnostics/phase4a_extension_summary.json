@@ -1,0 +1,105 @@
+{
+  "events": [
+    "bab_mandeb_2026",
+    "panama_2023"
+  ],
+  "case_roles": {
+    "bab_mandeb_2026": "concurrent_spillover_case",
+    "panama_2023": "non_security_contrast"
+  },
+  "screening_thresholds": {
+    "min_event_scenes": 4,
+    "min_event_detections": 60,
+    "min_event_acquisition_days": 3,
+    "prolonged_phase_days": 28,
+    "min_event_acquisition_weeks_prolonged": 3,
+    "min_median_coverage_fraction": 0.3,
+    "min_placebo_scenes": 4,
+    "strong_requires_same_pipeline": true,
+    "strong_requires_placebo": true,
+    "strong_requires_ais_days": 1
+  },
+  "water_domain_robustness": {
+    "bab_mandeb_2026": {
+      "water_domain_km2": 2668.625977533375,
+      "water_domain_by_year_km2": {
+        "2024": 2651.081055202608,
+        "2025": 2651.0810552026096,
+        "2026": 2668.625977533372
+      },
+      "max_abs_relative_difference_vs_full_window": 0.006574515304308104,
+      "definition": "union of all scene∩AOI intersections over the loaded window, built from land-masked GFW footprint geometry; no vessel detections are used"
+    },
+    "panama_2023": {
+      "water_domain_km2": 85.67856672991225,
+      "water_domain_by_year_km2": {
+        "2021": 85.67856672991222,
+        "2022": 85.67856672991228,
+        "2023": 85.67856672991225,
+        "2024": 85.67856672991228
+      },
+      "max_abs_relative_difference_vs_full_window": 3.3172484689197506e-16,
+      "definition": "union of all scene∩AOI intersections over the loaded window, built from land-masked GFW footprint geometry; no vessel detections are used"
+    }
+  },
+  "month_pair_row": [
+    {
+      "comparison": "2026-02->2026-03",
+      "n_classified_before": 56,
+      "n_classified_after": 50,
+      "pooled_rate_before": 0.875,
+      "pooled_rate_after": 0.84,
+      "delta_pp": -3.500000000000003,
+      "delta_ci_low_pp": -24.234326153259612,
+      "delta_ci_high_pp": 15.910669191919194,
+      "ci_computed": true,
+      "event": "bab_mandeb_2026"
+    }
+  ],
+  "status_by_event": {
+    "bab_mandeb_2026": {
+      "feasibility_status_sar": "CONDITIONAL",
+      "feasibility_status_ais": "STRONG",
+      "feasibility_status_combined": "CONDITIONAL"
+    },
+    "panama_2023": {
+      "feasibility_status_sar": "STRONG",
+      "feasibility_status_ais": "STRONG",
+      "feasibility_status_combined": "STRONG"
+    }
+  },
+  "monthly_screening_rates": {
+    "count": {
+      "bab_mandeb_2026": 9.0,
+      "panama_2023": 9.0
+    },
+    "mean": {
+      "bab_mandeb_2026": 0.8256392577044144,
+      "panama_2023": 0.8937920928087402
+    },
+    "std": {
+      "bab_mandeb_2026": 0.06883406086620125,
+      "panama_2023": 0.04759742598711231
+    },
+    "min": {
+      "bab_mandeb_2026": 0.7272727272727273,
+      "panama_2023": 0.8125
+    },
+    "25%": {
+      "bab_mandeb_2026": 0.775,
+      "panama_2023": 0.8598130841121495
+    },
+    "50%": {
+      "bab_mandeb_2026": 0.8095238095238095,
+      "panama_2023": 0.8916666666666667
+    },
+    "75%": {
+      "bab_mandeb_2026": 0.8842105263157894,
+      "panama_2023": 0.9270833333333334
+    },
+    "max": {
+      "bab_mandeb_2026": 0.9285714285714286,
+      "panama_2023": 0.9707317073170731
+    }
+  }
+}

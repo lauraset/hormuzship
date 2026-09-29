@@ -1,0 +1,37 @@
+{
+  "type": "FeatureCollection",
+  "name": "suez_canal_core",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "suez_canal_core",
+        "description": "Suez Canal event AOI: the southern single-lane section of the canal, its Suez entrance and the Ever Given grounding site (approx. 30.02 N, 32.58 E, canal km 151).",
+        "crs_epsg": 4326,
+        "role": "event_aoi_multievent",
+        "source": "geography_defined",
+        "definition": "bbox [32.30, 29.90, 32.65, 30.35]",
+        "pre_specified": true,
+        "defined_before_results": true,
+        "navigation_rationale": "Single-lane canal section with no passing possibility; a blockage here stops the whole convoy. Chosen from the navigation chart, not from matching-rate results.",
+        "caveat": "The box contains desert on both banks, so the areal coverage fraction is dominated by land. Water-only density normalisation is a Phase 4B refinement."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [32.30, 29.90],
+            [32.65, 29.90],
+            [32.65, 30.35],
+            [32.30, 30.35],
+            [32.30, 29.90]
+          ]
+        ]
+      }
+    }
+  ]
+}

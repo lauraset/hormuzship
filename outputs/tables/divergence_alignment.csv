@@ -1,0 +1,9 @@
+aoi_key,signal,baseline_week_5th_percentile,onset_week,weeks_to_first_crossing,event_year_mean_anomaly
+hormuz_core,AIS_SAR_days|ALL,-0.025942410678409175,2026-03-02,0,-1.298652770241984
+hormuz_core,AIS_all_days|ALL,0.04241676755248293,2026-03-02,0,-1.361479805414257
+hormuz_core,SAR_ALL_detections,-0.08815541051772842,2026-03-02,0,-0.6842407642238896
+hormuz_core,matching_rate_scene_median,0.39994122832794593,2026-03-02,0,
+hormuz_narrow_strait,AIS_SAR_days|ALL,-0.049844902034506464,2026-03-02,0,-4.149790969357404
+hormuz_narrow_strait,AIS_all_days|ALL,0.04313385687404658,2026-03-02,0,-3.9215854311780065
+hormuz_narrow_strait,SAR_ALL_detections,-0.3236669825501854,2026-03-02,0,-1.8819239467980526
+hormuz_narrow_strait,matching_rate_scene_median,0.6532738095238095,2026-03-02,0,

@@ -1,0 +1,1709 @@
+{
+  "ledger": "prepare_sar",
+  "steps": [
+    {
+      "step": "drop_partial_month:detections:202408",
+      "before_rows": 2,
+      "after_rows": 1,
+      "removed_rows": 1,
+      "removed_share": 0.5,
+      "reason": "full-month file already available for this month",
+      "details": {
+        "dropped_file": "sar_vessel_detections_pipev20231026_20240824.csv"
+      },
+      "dropped_file": "sar_vessel_detections_pipev20231026_20240824.csv"
+    },
+    {
+      "step": "drop_partial_month:detections:202411",
+      "before_rows": 2,
+      "after_rows": 1,
+      "removed_rows": 1,
+      "removed_share": 0.5,
+      "reason": "full-month file already available for this month",
+      "details": {
+        "dropped_file": "sar_vessel_detections_pipev20231026_20241106.csv"
+      },
+      "dropped_file": "sar_vessel_detections_pipev20231026_20241106.csv"
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202401.csv",
+      "before_rows": 7497,
+      "after_rows": 7497,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202401.csv",
+      "before_rows": 7497,
+      "after_rows": 22,
+      "removed_rows": 7475,
+      "removed_share": 0.9970654928638122,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202401.csv",
+      "before_rows": 22,
+      "after_rows": 20,
+      "removed_rows": 2,
+      "removed_share": 0.09090909090909091,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202402.csv",
+      "before_rows": 6563,
+      "after_rows": 6563,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202402.csv",
+      "before_rows": 6563,
+      "after_rows": 21,
+      "removed_rows": 6542,
+      "removed_share": 0.9968002437909492,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202402.csv",
+      "before_rows": 21,
+      "after_rows": 18,
+      "removed_rows": 3,
+      "removed_share": 0.14285714285714285,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202403.csv",
+      "before_rows": 7699,
+      "after_rows": 7699,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202403.csv",
+      "before_rows": 7699,
+      "after_rows": 22,
+      "removed_rows": 7677,
+      "removed_share": 0.9971424860371477,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202403.csv",
+      "before_rows": 22,
+      "after_rows": 20,
+      "removed_rows": 2,
+      "removed_share": 0.09090909090909091,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202404.csv",
+      "before_rows": 7233,
+      "after_rows": 7233,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202404.csv",
+      "before_rows": 7233,
+      "after_rows": 21,
+      "removed_rows": 7212,
+      "removed_share": 0.997096640398175,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202404.csv",
+      "before_rows": 21,
+      "after_rows": 18,
+      "removed_rows": 3,
+      "removed_share": 0.14285714285714285,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202405.csv",
+      "before_rows": 7388,
+      "after_rows": 7388,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202405.csv",
+      "before_rows": 7388,
+      "after_rows": 24,
+      "removed_rows": 7364,
+      "removed_share": 0.9967514889009204,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202405.csv",
+      "before_rows": 24,
+      "after_rows": 22,
+      "removed_rows": 2,
+      "removed_share": 0.08333333333333333,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202406.csv",
+      "before_rows": 6882,
+      "after_rows": 6882,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202406.csv",
+      "before_rows": 6882,
+      "after_rows": 21,
+      "removed_rows": 6861,
+      "removed_share": 0.9969485614646905,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202406.csv",
+      "before_rows": 21,
+      "after_rows": 18,
+      "removed_rows": 3,
+      "removed_share": 0.14285714285714285,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202407.csv",
+      "before_rows": 7338,
+      "after_rows": 7338,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202407.csv",
+      "before_rows": 7338,
+      "after_rows": 21,
+      "removed_rows": 7317,
+      "removed_share": 0.9971381847914963,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202407.csv",
+      "before_rows": 21,
+      "after_rows": 19,
+      "removed_rows": 2,
+      "removed_share": 0.09523809523809523,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202408.csv",
+      "before_rows": 7523,
+      "after_rows": 7523,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202408.csv",
+      "before_rows": 7523,
+      "after_rows": 22,
+      "removed_rows": 7501,
+      "removed_share": 0.9970756347201915,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202408.csv",
+      "before_rows": 22,
+      "after_rows": 19,
+      "removed_rows": 3,
+      "removed_share": 0.13636363636363635,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202409.csv",
+      "before_rows": 7502,
+      "after_rows": 7502,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202409.csv",
+      "before_rows": 7502,
+      "after_rows": 23,
+      "removed_rows": 7479,
+      "removed_share": 0.9969341508930952,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202409.csv",
+      "before_rows": 23,
+      "after_rows": 21,
+      "removed_rows": 2,
+      "removed_share": 0.08695652173913043,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202410.csv",
+      "before_rows": 7988,
+      "after_rows": 7988,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202410.csv",
+      "before_rows": 7988,
+      "after_rows": 22,
+      "removed_rows": 7966,
+      "removed_share": 0.9972458688032048,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202410.csv",
+      "before_rows": 22,
+      "after_rows": 20,
+      "removed_rows": 2,
+      "removed_share": 0.09090909090909091,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202411.csv",
+      "before_rows": 7354,
+      "after_rows": 7354,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202411.csv",
+      "before_rows": 7354,
+      "after_rows": 22,
+      "removed_rows": 7332,
+      "removed_share": 0.9970084307859668,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202411.csv",
+      "before_rows": 22,
+      "after_rows": 19,
+      "removed_rows": 3,
+      "removed_share": 0.13636363636363635,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202412.csv",
+      "before_rows": 7657,
+      "after_rows": 7657,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202412.csv",
+      "before_rows": 7657,
+      "after_rows": 22,
+      "removed_rows": 7635,
+      "removed_share": 0.9971268120673893,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202412.csv",
+      "before_rows": 22,
+      "after_rows": 20,
+      "removed_rows": 2,
+      "removed_share": 0.09090909090909091,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202501.csv",
+      "before_rows": 7241,
+      "after_rows": 7241,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202501.csv",
+      "before_rows": 7241,
+      "after_rows": 23,
+      "removed_rows": 7218,
+      "removed_share": 0.9968236431432123,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202501.csv",
+      "before_rows": 23,
+      "after_rows": 20,
+      "removed_rows": 3,
+      "removed_share": 0.13043478260869565,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202502.csv",
+      "before_rows": 6364,
+      "after_rows": 6364,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202502.csv",
+      "before_rows": 6364,
+      "after_rows": 20,
+      "removed_rows": 6344,
+      "removed_share": 0.9968573224387178,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202502.csv",
+      "before_rows": 20,
+      "after_rows": 18,
+      "removed_rows": 2,
+      "removed_share": 0.1,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202503.csv",
+      "before_rows": 7134,
+      "after_rows": 7134,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202503.csv",
+      "before_rows": 7134,
+      "after_rows": 21,
+      "removed_rows": 7113,
+      "removed_share": 0.9970563498738436,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202503.csv",
+      "before_rows": 21,
+      "after_rows": 19,
+      "removed_rows": 2,
+      "removed_share": 0.09523809523809523,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202504.csv",
+      "before_rows": 7169,
+      "after_rows": 7169,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202504.csv",
+      "before_rows": 7169,
+      "after_rows": 20,
+      "removed_rows": 7149,
+      "removed_share": 0.9972102106290975,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202504.csv",
+      "before_rows": 20,
+      "after_rows": 18,
+      "removed_rows": 2,
+      "removed_share": 0.1,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202505.csv",
+      "before_rows": 6870,
+      "after_rows": 6870,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202505.csv",
+      "before_rows": 6870,
+      "after_rows": 23,
+      "removed_rows": 6847,
+      "removed_share": 0.9966521106259097,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202505.csv",
+      "before_rows": 23,
+      "after_rows": 20,
+      "removed_rows": 3,
+      "removed_share": 0.13043478260869565,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202506.csv",
+      "before_rows": 6518,
+      "after_rows": 6518,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202506.csv",
+      "before_rows": 6518,
+      "after_rows": 18,
+      "removed_rows": 6500,
+      "removed_share": 0.9972384166922369,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202506.csv",
+      "before_rows": 18,
+      "after_rows": 16,
+      "removed_rows": 2,
+      "removed_share": 0.1111111111111111,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202507.csv",
+      "before_rows": 6744,
+      "after_rows": 6744,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202507.csv",
+      "before_rows": 6744,
+      "after_rows": 21,
+      "removed_rows": 6723,
+      "removed_share": 0.9968861209964412,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202507.csv",
+      "before_rows": 21,
+      "after_rows": 18,
+      "removed_rows": 3,
+      "removed_share": 0.14285714285714285,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202508.csv",
+      "before_rows": 6870,
+      "after_rows": 6870,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202508.csv",
+      "before_rows": 6870,
+      "after_rows": 21,
+      "removed_rows": 6849,
+      "removed_share": 0.996943231441048,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202508.csv",
+      "before_rows": 21,
+      "after_rows": 19,
+      "removed_rows": 2,
+      "removed_share": 0.09523809523809523,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202509.csv",
+      "before_rows": 8157,
+      "after_rows": 8157,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202509.csv",
+      "before_rows": 8157,
+      "after_rows": 25,
+      "removed_rows": 8132,
+      "removed_share": 0.9969351477258797,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202509.csv",
+      "before_rows": 25,
+      "after_rows": 21,
+      "removed_rows": 4,
+      "removed_share": 0.16,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202510.csv",
+      "before_rows": 12906,
+      "after_rows": 12906,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202510.csv",
+      "before_rows": 12906,
+      "after_rows": 46,
+      "removed_rows": 12860,
+      "removed_share": 0.9964357663102433,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202510.csv",
+      "before_rows": 46,
+      "after_rows": 38,
+      "removed_rows": 8,
+      "removed_share": 0.17391304347826086,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202511.csv",
+      "before_rows": 6314,
+      "after_rows": 6314,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202511.csv",
+      "before_rows": 6314,
+      "after_rows": 18,
+      "removed_rows": 6296,
+      "removed_share": 0.9971491922711435,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202511.csv",
+      "before_rows": 18,
+      "after_rows": 16,
+      "removed_rows": 2,
+      "removed_share": 0.1111111111111111,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202512.csv",
+      "before_rows": 6804,
+      "after_rows": 6804,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202512.csv",
+      "before_rows": 6804,
+      "after_rows": 22,
+      "removed_rows": 6782,
+      "removed_share": 0.996766607877719,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202512.csv",
+      "before_rows": 22,
+      "after_rows": 20,
+      "removed_rows": 2,
+      "removed_share": 0.09090909090909091,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202601.csv",
+      "before_rows": 7405,
+      "after_rows": 7405,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202601.csv",
+      "before_rows": 7405,
+      "after_rows": 22,
+      "removed_rows": 7383,
+      "removed_share": 0.9970290344361917,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202601.csv",
+      "before_rows": 22,
+      "after_rows": 20,
+      "removed_rows": 2,
+      "removed_share": 0.09090909090909091,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202602.csv",
+      "before_rows": 5849,
+      "after_rows": 5849,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202602.csv",
+      "before_rows": 5849,
+      "after_rows": 20,
+      "removed_rows": 5829,
+      "removed_share": 0.9965806120704394,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202602.csv",
+      "before_rows": 20,
+      "after_rows": 18,
+      "removed_rows": 2,
+      "removed_share": 0.1,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202603.csv",
+      "before_rows": 7511,
+      "after_rows": 7511,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202603.csv",
+      "before_rows": 7511,
+      "after_rows": 22,
+      "removed_rows": 7489,
+      "removed_share": 0.9970709625882039,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202603.csv",
+      "before_rows": 22,
+      "after_rows": 20,
+      "removed_rows": 2,
+      "removed_share": 0.09090909090909091,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202604.csv",
+      "before_rows": 6301,
+      "after_rows": 6301,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202604.csv",
+      "before_rows": 6301,
+      "after_rows": 21,
+      "removed_rows": 6280,
+      "removed_share": 0.9966671956832249,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202604.csv",
+      "before_rows": 21,
+      "after_rows": 19,
+      "removed_rows": 2,
+      "removed_share": 0.09523809523809523,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "footprint_wkt_parse:sar_detections_footprints_202605.csv",
+      "before_rows": 5892,
+      "after_rows": 5892,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "could not be parsed into a non-empty polygon (invalid/blank WKT)",
+      "details": {}
+    },
+    {
+      "step": "footprint_bbox_filter:sar_detections_footprints_202605.csv",
+      "before_rows": 5892,
+      "after_rows": 18,
+      "removed_rows": 5874,
+      "removed_share": 0.9969450101832994,
+      "reason": "footprint bounding box does not overlap the AOI bounding box",
+      "details": {}
+    },
+    {
+      "step": "footprint_intersection_filter:sar_detections_footprints_202605.csv",
+      "before_rows": 18,
+      "after_rows": 16,
+      "removed_rows": 2,
+      "removed_share": 0.1111111111111111,
+      "reason": "footprint polygon does not intersect the AOI polygon (bbox overlap only)",
+      "details": {}
+    },
+    {
+      "step": "scene_dedup",
+      "before_rows": 570,
+      "after_rows": 570,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "same scene_id encountered in more than one monthly file",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev20231026_202401.csv",
+      "before_rows": 216234,
+      "after_rows": 216234,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev20231026_202401.csv",
+      "before_rows": 216234,
+      "after_rows": 2768,
+      "removed_rows": 213466,
+      "removed_share": 0.9871990528779008,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev20231026_202401.csv",
+      "before_rows": 2768,
+      "after_rows": 711,
+      "removed_rows": 2057,
+      "removed_share": 0.743135838150289,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev20231026_202402.csv",
+      "before_rows": 191043,
+      "after_rows": 191043,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev20231026_202402.csv",
+      "before_rows": 191043,
+      "after_rows": 2757,
+      "removed_rows": 188286,
+      "removed_share": 0.9855686939589516,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev20231026_202402.csv",
+      "before_rows": 2757,
+      "after_rows": 601,
+      "removed_rows": 2156,
+      "removed_share": 0.7820094305404425,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev20231026_202403.csv",
+      "before_rows": 244407,
+      "after_rows": 244407,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev20231026_202403.csv",
+      "before_rows": 244407,
+      "after_rows": 3016,
+      "removed_rows": 241391,
+      "removed_share": 0.9876599279071385,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev20231026_202403.csv",
+      "before_rows": 3016,
+      "after_rows": 797,
+      "removed_rows": 2219,
+      "removed_share": 0.7357427055702918,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev20231026_202404.csv",
+      "before_rows": 233664,
+      "after_rows": 233664,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev20231026_202404.csv",
+      "before_rows": 233664,
+      "after_rows": 3018,
+      "removed_rows": 230646,
+      "removed_share": 0.9870840180772391,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev20231026_202404.csv",
+      "before_rows": 3018,
+      "after_rows": 715,
+      "removed_rows": 2303,
+      "removed_share": 0.7630881378396289,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev20231026_202405.csv",
+      "before_rows": 217879,
+      "after_rows": 217879,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev20231026_202405.csv",
+      "before_rows": 217879,
+      "after_rows": 3564,
+      "removed_rows": 214315,
+      "removed_share": 0.9836422968711992,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev20231026_202405.csv",
+      "before_rows": 3564,
+      "after_rows": 994,
+      "removed_rows": 2570,
+      "removed_share": 0.7210998877665544,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev20231026_202406.csv",
+      "before_rows": 200341,
+      "after_rows": 200341,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev20231026_202406.csv",
+      "before_rows": 200341,
+      "after_rows": 2873,
+      "removed_rows": 197468,
+      "removed_share": 0.9856594506366645,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev20231026_202406.csv",
+      "before_rows": 2873,
+      "after_rows": 616,
+      "removed_rows": 2257,
+      "removed_share": 0.7855899756352245,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev20231026_202407.csv",
+      "before_rows": 213200,
+      "after_rows": 213200,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev20231026_202407.csv",
+      "before_rows": 213200,
+      "after_rows": 3004,
+      "removed_rows": 210196,
+      "removed_share": 0.9859099437148218,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev20231026_202407.csv",
+      "before_rows": 3004,
+      "after_rows": 649,
+      "removed_rows": 2355,
+      "removed_share": 0.7839547270306259,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev20231026_202408.csv",
+      "before_rows": 257940,
+      "after_rows": 257940,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev20231026_202408.csv",
+      "before_rows": 257940,
+      "after_rows": 3398,
+      "removed_rows": 254542,
+      "removed_share": 0.9868263937349772,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev20231026_202408.csv",
+      "before_rows": 3398,
+      "after_rows": 853,
+      "removed_rows": 2545,
+      "removed_share": 0.7489699823425544,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev20231026_202409.csv",
+      "before_rows": 257743,
+      "after_rows": 257743,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev20231026_202409.csv",
+      "before_rows": 257743,
+      "after_rows": 3268,
+      "removed_rows": 254475,
+      "removed_share": 0.9873207031810757,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev20231026_202409.csv",
+      "before_rows": 3268,
+      "after_rows": 718,
+      "removed_rows": 2550,
+      "removed_share": 0.7802937576499388,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev20231026_202410.csv",
+      "before_rows": 268681,
+      "after_rows": 268681,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev20231026_202410.csv",
+      "before_rows": 268681,
+      "after_rows": 2965,
+      "removed_rows": 265716,
+      "removed_share": 0.9889646085878793,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev20231026_202410.csv",
+      "before_rows": 2965,
+      "after_rows": 757,
+      "removed_rows": 2208,
+      "removed_share": 0.7446880269814502,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev3_202411.csv",
+      "before_rows": 248247,
+      "after_rows": 248247,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev3_202411.csv",
+      "before_rows": 248247,
+      "after_rows": 3205,
+      "removed_rows": 245042,
+      "removed_share": 0.9870894713732694,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev3_202411.csv",
+      "before_rows": 3205,
+      "after_rows": 702,
+      "removed_rows": 2503,
+      "removed_share": 0.7809672386895475,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev3_202412.csv",
+      "before_rows": 239081,
+      "after_rows": 239081,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev3_202412.csv",
+      "before_rows": 239081,
+      "after_rows": 3348,
+      "removed_rows": 235733,
+      "removed_share": 0.9859963777966463,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev3_202412.csv",
+      "before_rows": 3348,
+      "after_rows": 973,
+      "removed_rows": 2375,
+      "removed_share": 0.709378733572282,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev3_202501.csv",
+      "before_rows": 221615,
+      "after_rows": 221615,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev3_202501.csv",
+      "before_rows": 221615,
+      "after_rows": 3614,
+      "removed_rows": 218001,
+      "removed_share": 0.9836924395911829,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev3_202501.csv",
+      "before_rows": 3614,
+      "after_rows": 810,
+      "removed_rows": 2804,
+      "removed_share": 0.7758716104039846,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev3_202502.csv",
+      "before_rows": 192530,
+      "after_rows": 192530,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev3_202502.csv",
+      "before_rows": 192530,
+      "after_rows": 3273,
+      "removed_rows": 189257,
+      "removed_share": 0.9830000519399574,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev3_202502.csv",
+      "before_rows": 3273,
+      "after_rows": 849,
+      "removed_rows": 2424,
+      "removed_share": 0.7406049495875344,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev3_202503.csv",
+      "before_rows": 208030,
+      "after_rows": 208030,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev3_202503.csv",
+      "before_rows": 208030,
+      "after_rows": 2818,
+      "removed_rows": 205212,
+      "removed_share": 0.9864538768446859,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev3_202503.csv",
+      "before_rows": 2818,
+      "after_rows": 697,
+      "removed_rows": 2121,
+      "removed_share": 0.7526614620298083,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev3_202504.csv",
+      "before_rows": 229374,
+      "after_rows": 229374,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev3_202504.csv",
+      "before_rows": 229374,
+      "after_rows": 3150,
+      "removed_rows": 226224,
+      "removed_share": 0.9862669701012321,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev3_202504.csv",
+      "before_rows": 3150,
+      "after_rows": 888,
+      "removed_rows": 2262,
+      "removed_share": 0.7180952380952381,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev3_202505.csv",
+      "before_rows": 213368,
+      "after_rows": 213368,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev3_202505.csv",
+      "before_rows": 213368,
+      "after_rows": 3775,
+      "removed_rows": 209593,
+      "removed_share": 0.9823075625210903,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev3_202505.csv",
+      "before_rows": 3775,
+      "after_rows": 866,
+      "removed_rows": 2909,
+      "removed_share": 0.7705960264900662,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev3_202506.csv",
+      "before_rows": 199813,
+      "after_rows": 199813,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev3_202506.csv",
+      "before_rows": 199813,
+      "after_rows": 3008,
+      "removed_rows": 196805,
+      "removed_share": 0.9849459244393508,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev3_202506.csv",
+      "before_rows": 3008,
+      "after_rows": 764,
+      "removed_rows": 2244,
+      "removed_share": 0.7460106382978723,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev3_202507.csv",
+      "before_rows": 191171,
+      "after_rows": 191171,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev3_202507.csv",
+      "before_rows": 191171,
+      "after_rows": 3334,
+      "removed_rows": 187837,
+      "removed_share": 0.9825601163356367,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev3_202507.csv",
+      "before_rows": 3334,
+      "after_rows": 709,
+      "removed_rows": 2625,
+      "removed_share": 0.7873425314937013,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev3_202508.csv",
+      "before_rows": 224905,
+      "after_rows": 224905,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev3_202508.csv",
+      "before_rows": 224905,
+      "after_rows": 3341,
+      "removed_rows": 221564,
+      "removed_share": 0.9851448389319936,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev3_202508.csv",
+      "before_rows": 3341,
+      "after_rows": 757,
+      "removed_rows": 2584,
+      "removed_share": 0.7734211313977851,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev3_202509.csv",
+      "before_rows": 285628,
+      "after_rows": 285628,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev3_202509.csv",
+      "before_rows": 285628,
+      "after_rows": 3614,
+      "removed_rows": 282014,
+      "removed_share": 0.9873471788480122,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev3_202509.csv",
+      "before_rows": 3614,
+      "after_rows": 923,
+      "removed_rows": 2691,
+      "removed_share": 0.7446043165467626,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev3_202510.csv",
+      "before_rows": 277263,
+      "after_rows": 277263,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev3_202510.csv",
+      "before_rows": 277263,
+      "after_rows": 3638,
+      "removed_rows": 273625,
+      "removed_share": 0.9868788839477319,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev3_202510.csv",
+      "before_rows": 3638,
+      "after_rows": 896,
+      "removed_rows": 2742,
+      "removed_share": 0.7537108301264431,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev3_202511.csv",
+      "before_rows": 247581,
+      "after_rows": 247581,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev3_202511.csv",
+      "before_rows": 247581,
+      "after_rows": 3053,
+      "removed_rows": 244528,
+      "removed_share": 0.987668682168664,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev3_202511.csv",
+      "before_rows": 3053,
+      "after_rows": 880,
+      "removed_rows": 2173,
+      "removed_share": 0.7117589256469047,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev3_202512.csv",
+      "before_rows": 256924,
+      "after_rows": 256924,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev3_202512.csv",
+      "before_rows": 256924,
+      "after_rows": 3720,
+      "removed_rows": 253204,
+      "removed_share": 0.9855210101041553,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev3_202512.csv",
+      "before_rows": 3720,
+      "after_rows": 877,
+      "removed_rows": 2843,
+      "removed_share": 0.764247311827957,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev3_202601.csv",
+      "before_rows": 243856,
+      "after_rows": 243856,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev3_202601.csv",
+      "before_rows": 243856,
+      "after_rows": 3745,
+      "removed_rows": 240111,
+      "removed_share": 0.9846425759464602,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev3_202601.csv",
+      "before_rows": 3745,
+      "after_rows": 931,
+      "removed_rows": 2814,
+      "removed_share": 0.7514018691588785,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev3_202602.csv",
+      "before_rows": 185481,
+      "after_rows": 185481,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev3_202602.csv",
+      "before_rows": 185481,
+      "after_rows": 3273,
+      "removed_rows": 182208,
+      "removed_share": 0.9823539877399842,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev3_202602.csv",
+      "before_rows": 3273,
+      "after_rows": 709,
+      "removed_rows": 2564,
+      "removed_share": 0.7833791628475405,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev4_202603.csv",
+      "before_rows": 243126,
+      "after_rows": 243126,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev4_202603.csv",
+      "before_rows": 243126,
+      "after_rows": 3059,
+      "removed_rows": 240067,
+      "removed_share": 0.9874180466095769,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev4_202603.csv",
+      "before_rows": 3059,
+      "after_rows": 453,
+      "removed_rows": 2606,
+      "removed_share": 0.8519123896698267,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev4_202604.csv",
+      "before_rows": 244532,
+      "after_rows": 244532,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev4_202604.csv",
+      "before_rows": 244532,
+      "after_rows": 3432,
+      "removed_rows": 241100,
+      "removed_share": 0.9859650270721214,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev4_202604.csv",
+      "before_rows": 3432,
+      "after_rows": 452,
+      "removed_rows": 2980,
+      "removed_share": 0.8682983682983683,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_coordinate_validity:sar_vessel_detections_pipev4_202605.csv",
+      "before_rows": 193199,
+      "after_rows": 193199,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "latitude/longitude missing or non-numeric (kept as excluded, not filled)",
+      "details": {}
+    },
+    {
+      "step": "detection_bbox_filter:sar_vessel_detections_pipev4_202605.csv",
+      "before_rows": 193199,
+      "after_rows": 2772,
+      "removed_rows": 190427,
+      "removed_share": 0.9856520996485489,
+      "reason": "detection outside the AOI bounding box (buffered)",
+      "details": {
+        "buffer_deg": 0.05
+      },
+      "buffer_deg": 0.05
+    },
+    {
+      "step": "detection_aoi_polygon_filter:sar_vessel_detections_pipev4_202605.csv",
+      "before_rows": 2772,
+      "after_rows": 411,
+      "removed_rows": 2361,
+      "removed_share": 0.8517316017316018,
+      "reason": "point falls inside the buffered bbox but outside the AOI polygon",
+      "details": {}
+    },
+    {
+      "step": "detection_analysis_window",
+      "before_rows": 21958,
+      "after_rows": 21958,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "timestamp after phase-1 analysis end (2026-05-31)",
+      "details": {}
+    },
+    {
+      "step": "detection_dedup",
+      "before_rows": 21958,
+      "after_rows": 21958,
+      "removed_rows": 0,
+      "removed_share": 0.0,
+      "reason": "identical (scene_id, timestamp, lat, lon) appearing in more than one monthly file",
+      "details": {}
+    }
+  ]
+}

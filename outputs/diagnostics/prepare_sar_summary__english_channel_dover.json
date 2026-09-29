@@ -1,0 +1,12 @@
+{
+  "aoi_key": "english_channel_dover",
+  "aoi_area_km2": 1171.4042140369133,
+  "n_scenes_intersecting_aoi": 298,
+  "n_scenes_above_threshold": 211,
+  "min_scene_coverage_fraction": 0.3,
+  "n_aoi_detections": 4150,
+  "n_orphan_detections": 67,
+  "n_acquisition_dates": 298,
+  "date_min": "2024-01-02",
+  "date_max": "2026-05-24"
+}

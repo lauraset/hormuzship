@@ -1,0 +1,17 @@
+aoi_key,series,vessel_population,classification,class_values,n_weeks,weeks_with_expectation,value_total
+hormuz_core,AIS_SAR_days,ALL,all,__ALL__,125,125,354107.9166666666
+hormuz_core,AIS_all_days,ALL,all,__ALL__,126,126,2501011.0
+hormuz_core,AIS_SAR_days,commercial_gear_types,gear_type,"TANKER,CARGO,CARGO_OR_TANKER",125,125,230110.5
+hormuz_core,AIS_all_days,commercial_gear_types,gear_type,"TANKER,CARGO,CARGO_OR_TANKER",126,126,1613465.0
+hormuz_core,AIS_SAR_days,non_fishing_gear_types,gear_type,"TANKER,CARGO,CARGO_OR_TANKER,CARRIER,BUNKER,PASSENGER,OTHER_NON_FISHING,PATROL_VESSEL,INACTIVE,INSUFFICIENT_DATA",125,125,275691.55000000005
+hormuz_core,AIS_all_days,non_fishing_gear_types,gear_type,"TANKER,CARGO,CARGO_OR_TANKER,CARRIER,BUNKER,PASSENGER,OTHER_NON_FISHING,PATROL_VESSEL,INACTIVE,INSUFFICIENT_DATA",126,126,1924433.0
+hormuz_core,AIS_SAR_days,fishing_gear_types,gear_type,"GEAR,FISHING,TRAWLERS,DRIFTING_LONGLINES,DREDGE_NON_FISHING,SEISMIC_VESSEL",125,125,79955.25
+hormuz_core,AIS_all_days,fishing_gear_types,gear_type,"GEAR,FISHING,TRAWLERS,DRIFTING_LONGLINES,DREDGE_NON_FISHING,SEISMIC_VESSEL",126,126,572921.0
+hormuz_narrow_strait,AIS_SAR_days,ALL,all,__ALL__,125,125,34400.916666666664
+hormuz_narrow_strait,AIS_all_days,ALL,all,__ALL__,126,126,242891.0
+hormuz_narrow_strait,AIS_SAR_days,commercial_gear_types,gear_type,"TANKER,CARGO,CARGO_OR_TANKER",124,124,31548.833333333336
+hormuz_narrow_strait,AIS_all_days,commercial_gear_types,gear_type,"TANKER,CARGO,CARGO_OR_TANKER",126,126,220870.0
+hormuz_narrow_strait,AIS_SAR_days,non_fishing_gear_types,gear_type,"TANKER,CARGO,CARGO_OR_TANKER,CARRIER,BUNKER,PASSENGER,OTHER_NON_FISHING,PATROL_VESSEL,INACTIVE,INSUFFICIENT_DATA",125,125,33955.666666666664
+hormuz_narrow_strait,AIS_all_days,non_fishing_gear_types,gear_type,"TANKER,CARGO,CARGO_OR_TANKER,CARRIER,BUNKER,PASSENGER,OTHER_NON_FISHING,PATROL_VESSEL,INACTIVE,INSUFFICIENT_DATA",126,126,236245.0
+hormuz_narrow_strait,AIS_SAR_days,fishing_gear_types,gear_type,"GEAR,FISHING,TRAWLERS,DRIFTING_LONGLINES,DREDGE_NON_FISHING,SEISMIC_VESSEL",98,98,931.75
+hormuz_narrow_strait,AIS_all_days,fishing_gear_types,gear_type,"GEAR,FISHING,TRAWLERS,DRIFTING_LONGLINES,DREDGE_NON_FISHING,SEISMIC_VESSEL",126,126,4639.0

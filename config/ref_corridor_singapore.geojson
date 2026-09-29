@@ -1,0 +1,36 @@
+{
+  "type": "FeatureCollection",
+  "name": "singapore_strait",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "singapore_strait",
+        "description": "Technical reference corridor for the GFW pipev3 -> pipev4 break test. Singapore Strait / Malacca approach, one of the busiest commercial lanes in the world.",
+        "crs_epsg": 4326,
+        "role": "technical_reference_corridor",
+        "source": "pre_specified_bounding_box",
+        "definition": "bbox [103.55, 1.10, 104.05, 1.40]",
+        "pre_specified": true,
+        "tuned_on_results": false,
+        "purpose": "Test whether the AIS-SAR matching rate also jumps at 2026-03-01 in an unrelated corridor. NOT a causal control for the Hormuz disruption."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [103.55, 1.10],
+            [104.05, 1.10],
+            [104.05, 1.40],
+            [103.55, 1.40],
+            [103.55, 1.10]
+          ]
+        ]
+      }
+    }
+  ]
+}

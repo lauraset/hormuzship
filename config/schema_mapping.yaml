@@ -1,0 +1,51 @@
+generated_by: src/00_inspect_data.py
+generated_at: '2026-09-26T09:40:42.222352+00:00'
+verified: false
+verified_by: auto_detection
+auto_detection_unresolved_roles: []
+source_schema_report: D:\code\hormuzship\outputs\diagnostics\schema_report.json
+signatures:
+- detections|pipeline=20231026
+- detections|pipeline=3
+- detections|pipeline=4
+- footprints|pipeline=n/a
+datetime: timestamp
+latitude: lat
+longitude: lon
+scene_id: scene_id
+footprint_scene_id: scene_id
+footprint_wkt: footprint_wkt
+footprint_date: date
+footprint_start_time: start_time
+footprint_end_time: end_time
+match_label: matched_category
+match_value_unmatched: unmatched
+matching_score: matching_score
+presence_score: presence_score
+fishing_score: fishing_score
+mmsi: mmsi
+length_m: length_m
+matched_category: matched_category
+match_definition:
+  primary: matched_category != 'unmatched'
+  primary_description: GFW match label column, 'unmatched' means no AIS identity was
+    assigned
+  alternative: mmsi is not null
+  alternative_column: mmsi
+  matched_label_values:
+  - NA
+  - bunker
+  - cargo
+  - carrier
+  - discrepancy
+  - fishing
+  - gear
+  - noisy_vessel
+  - other
+  - passenger
+  - seismic_vessel
+  - support
+  unknown_label_values:
+  - NA
+platform_rule: scene_id.split('_')[0] -> S1A/S1B/S1C/S1D
+pipeline_source: GFW file name token 'pipev<version>'

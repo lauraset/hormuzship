@@ -1,0 +1,19 @@
+# local environment / secrets
+.env
+
+# raw and derived data (regenerable; raw data lives outside the repo)
+data/raw/
+data/interim/
+data/processed/
+
+# run outputs
+outputs/figures/
+outputs/tables/
+outputs/diagnostics/
+outputs/logs/
+
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/

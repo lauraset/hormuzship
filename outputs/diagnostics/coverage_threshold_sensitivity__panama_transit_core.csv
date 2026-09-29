@@ -1,0 +1,9 @@
+coverage_threshold,n_scenes,n_scenes_with_detections,n_detections,n_matched,n_unmatched,matching_rate_pooled,matching_rate_scene_median,median_sar_density
+0.0,142,107,173,140,33,0.8092485549132948,1.0,53.330010147602955
+0.05,0,0,0,0,0,,,
+0.1,0,0,0,0,0,,,
+0.15,0,0,0,0,0,,,
+0.2,0,0,0,0,0,,,
+0.3,0,0,0,0,0,,,
+0.4,0,0,0,0,0,,,
+0.5,0,0,0,0,0,,,

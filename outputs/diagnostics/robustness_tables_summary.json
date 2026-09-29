@@ -1,0 +1,84 @@
+{
+  "aois": [
+    "hormuz_core",
+    "hormuz_narrow_strait"
+  ],
+  "primary_aoi": "hormuz_core",
+  "n_rows_aoi_sensitivity": 18,
+  "n_rows_definition_sensitivity": 152,
+  "n_rows_length_bins": 57,
+  "pre_post_by_aoi": [
+    {
+      "aoi": "hormuz_core",
+      "aoi_role": "primary",
+      "year": "2024",
+      "scenes_pre": 14.0,
+      "scenes_post": 22.0,
+      "rate_pre": 0.5247524752475248,
+      "rate_post": 0.5148632580261593,
+      "delta_pp": -0.9889217221365487,
+      "ci_low": -6.135951432036819,
+      "ci_high": 4.044130922156737
+    },
+    {
+      "aoi": "hormuz_core",
+      "aoi_role": "primary",
+      "year": "2025",
+      "scenes_pre": 14.0,
+      "scenes_post": 20.0,
+      "rate_pre": 0.47700170357751276,
+      "rate_post": 0.48622821810005623,
+      "delta_pp": 0.9226514522543472,
+      "ci_low": -3.8002827570096063,
+      "ci_high": 5.260607500310376
+    },
+    {
+      "aoi": "hormuz_core",
+      "aoi_role": "primary",
+      "year": "2026",
+      "scenes_pre": 14.0,
+      "scenes_post": 20.0,
+      "rate_pre": 0.4701429772918419,
+      "rate_post": 0.3172043010752688,
+      "delta_pp": -15.29386762165731,
+      "ci_low": -22.481607703047104,
+      "ci_high": -8.370032405942162
+    },
+    {
+      "aoi": "hormuz_narrow_strait",
+      "aoi_role": "sensitivity_nested_aoi",
+      "year": "2024",
+      "scenes_pre": 15.0,
+      "scenes_post": 23.0,
+      "rate_pre": 0.8088235294117647,
+      "rate_post": 0.7675840978593272,
+      "delta_pp": -4.123943155243747,
+      "ci_low": -13.504696773324664,
+      "ci_high": 5.669208382059896
+    },
+    {
+      "aoi": "hormuz_narrow_strait",
+      "aoi_role": "sensitivity_nested_aoi",
+      "year": "2025",
+      "scenes_pre": 14.0,
+      "scenes_post": 20.0,
+      "rate_pre": 0.8169642857142857,
+      "rate_post": 0.8595890410958904,
+      "delta_pp": 4.262475538160471,
+      "ci_low": -1.4575491403739351,
+      "ci_high": 10.02766406299015
+    },
+    {
+      "aoi": "hormuz_narrow_strait",
+      "aoi_role": "sensitivity_nested_aoi",
+      "year": "2026",
+      "scenes_pre": 14.0,
+      "scenes_post": 20.0,
+      "rate_pre": 0.8434343434343434,
+      "rate_post": 0.11538461538461539,
+      "delta_pp": -72.8049728049728,
+      "ci_low": -84.1127111790079,
+      "ci_high": -59.54838011593526
+    }
+  ]
+}

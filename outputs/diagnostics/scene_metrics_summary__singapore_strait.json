@@ -1,0 +1,14 @@
+{
+  "aoi_key": "singapore_strait",
+  "n_scenes_total": 158,
+  "n_scenes_used": 114,
+  "coverage_threshold": 0.3,
+  "n_detections_total": 19786,
+  "n_detections_used": 19618,
+  "pooled_matching_rate_used": 0.9393414211438474,
+  "n_scenes_with_unknown_labels": 0,
+  "n_weeks_with_sar": 76,
+  "weeks_min_date": "2024-01-08",
+  "weeks_max_date": "2026-05-18",
+  "unsupported_platforms_excluded": []
+}

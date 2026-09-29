@@ -1,0 +1,4 @@
+step,before_rows,after_rows,removed_rows,removed_share,reason,n_orphan_scenes,ledger,excluded_platforms
+orphan_detections_excluded,21958,21716,242,0.011021040167592677,"scene_id not present in the footprint table, so coverage/density is undefined",5.0,build_scene_metrics,
+platform_without_detections_excluded,570,551,19,0.03333333333333333,footprint-only platform with zero detections in the whole window,,build_scene_metrics,S1C
+primary_analysis_sample,570,205,365,0.6403508771929824,coverage_fraction < sar.min_scene_coverage_fraction (0.3) or platform has no detections in the archive,,build_scene_metrics,

@@ -1,0 +1,13 @@
+{
+  "aoi_key": "bab_el_mandeb_core",
+  "window_tag": "w2024_2026",
+  "aoi_area_km2": 4296.821219196809,
+  "n_scenes_intersecting_aoi": 278,
+  "n_scenes_above_threshold": 208,
+  "min_scene_coverage_fraction": 0.3,
+  "n_aoi_detections": 1153,
+  "n_orphan_detections": 14,
+  "n_acquisition_dates": 143,
+  "date_min": "2024-01-06",
+  "date_max": "2026-05-24"
+}

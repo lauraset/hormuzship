@@ -1,0 +1,4 @@
+period,n_detections,n_scenes,observed_matching_rate,standardized_matching_probability,standardized_ci_low,standardized_ci_high,standardized_change_vs_target_pp,standardized_change_ci_low_pp,standardized_change_ci_high_pp,standardization_target,coefficient_draws,event,aoi_key,case_role
+pre,96,7,0.9270833333333334,0.9270833333308213,0.9024095280831204,0.9457371995401889,0.11587788970345292,0.0,0.0,pre,1000,panama_2023,panama_canal_core,non_security_contrast
+restricted,205,19,0.9707317073170731,0.9736165607795955,0.9504550140204048,0.9878510717669851,4.769200634580873,1.942252889751503,7.594498381691355,pre,1000,panama_2023,panama_canal_core,non_security_contrast
+adaptation,123,10,0.9105691056910569,0.9550542120074422,0.933254712187435,0.9713422040897186,2.9129657573655487,0.04541649969117989,5.82711481360128,pre,1000,panama_2023,panama_canal_core,non_security_contrast

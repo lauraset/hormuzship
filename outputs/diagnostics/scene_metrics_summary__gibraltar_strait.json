@@ -1,0 +1,16 @@
+{
+  "aoi_key": "gibraltar_strait",
+  "n_scenes_total": 419,
+  "n_scenes_used": 204,
+  "coverage_threshold": 0.3,
+  "n_detections_total": 6842,
+  "n_detections_used": 4755,
+  "pooled_matching_rate_used": 0.9362776025236593,
+  "n_scenes_with_unknown_labels": 0,
+  "n_weeks_with_sar": 120,
+  "weeks_min_date": "2024-01-01",
+  "weeks_max_date": "2026-05-25",
+  "unsupported_platforms_excluded": [
+    "S1C"
+  ]
+}

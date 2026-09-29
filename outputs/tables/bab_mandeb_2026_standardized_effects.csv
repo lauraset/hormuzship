@@ -1,0 +1,4 @@
+period,n_detections,n_scenes,observed_matching_rate,standardized_matching_probability,standardized_ci_low,standardized_ci_high,standardized_change_vs_target_pp,standardized_change_ci_low_pp,standardized_change_ci_high_pp,standardization_target,coefficient_draws,event,aoi_key,case_role
+baseline,95,13,0.8842105263157894,0.8842105263142488,0.7883724438159456,0.9296362920225321,1.4219009384475068,0.0,0.0,baseline,1000,bab_mandeb_2026,bab_el_mandeb_core,concurrent_regional_falsification
+acute,50,7,0.84,0.8277154643581989,0.6859611854750504,0.8960167870215404,-4.227605257157485,-19.833636412553183,6.172917776210188,baseline,1000,bab_mandeb_2026,bab_el_mandeb_core,concurrent_regional_falsification
+persistent,103,14,0.7669902912621359,0.7640230545771615,0.6607462799144791,0.8175679815695744,-10.596846235261225,-22.83582642194007,-1.2948584522428375,baseline,1000,bab_mandeb_2026,bab_el_mandeb_core,concurrent_regional_falsification

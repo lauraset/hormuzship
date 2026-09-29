@@ -1,0 +1,19 @@
+2026-09-26 20:41:05 | INFO    | 03b_robustness_tables | ==============================================================================
+2026-09-26 20:41:05 | INFO    | 03b_robustness_tables | STEP 3b - Phase 1 robustness extension (AOI + matching definition + size)
+2026-09-26 20:41:05 | INFO    | 03b_robustness_tables | ==============================================================================
+2026-09-26 20:41:05 | INFO    | 03b_robustness_tables | AOI hormuz_core: 570 scenes (205 usable, 570 intersecting), 15299 detections in usable scenes
+2026-09-26 20:41:05 | INFO    | 03b_robustness_tables | AOI hormuz_narrow_strait: 215 scenes (207 usable, 215 intersecting), 2696 detections in usable scenes
+2026-09-26 20:41:05 | INFO    | 03b_robustness_tables | aoi_sensitivity: 18 rows across 2 AOI(s)
+2026-09-26 20:41:05 | INFO    | 03b_robustness_tables | wrote D:\code\hormuzship\outputs\tables\aoi_sensitivity.csv
+2026-09-26 20:41:05 | INFO    | 03b_robustness_tables | matching_definition_sensitivity: 152 rows
+2026-09-26 20:41:05 | INFO    | 03b_robustness_tables | wrote D:\code\hormuzship\outputs\tables\matching_definition_sensitivity.csv
+2026-09-26 20:41:05 | INFO    | 03b_robustness_tables | length_bin_matching: 57 rows
+2026-09-26 20:41:05 | INFO    | 03b_robustness_tables | wrote D:\code\hormuzship\outputs\tables\length_bin_matching.csv
+2026-09-26 20:41:05 | INFO    | 03b_robustness_tables | pre/post matching-rate change by AOI:
+                 aoi               aoi_role year  scenes_pre  scenes_post  rate_pre  rate_post  delta_pp  ci_low  ci_high
+         hormuz_core                primary 2024        14.0         22.0     0.525      0.515    -0.989  -6.136    4.044
+         hormuz_core                primary 2025        14.0         20.0     0.477      0.486     0.923  -3.800    5.261
+         hormuz_core                primary 2026        14.0         20.0     0.470      0.317   -15.294 -22.482   -8.370
+hormuz_narrow_strait sensitivity_nested_aoi 2024        15.0         23.0     0.809      0.768    -4.124 -13.505    5.669
+hormuz_narrow_strait sensitivity_nested_aoi 2025        14.0         20.0     0.817      0.860     4.262  -1.458   10.028
+hormuz_narrow_strait sensitivity_nested_aoi 2026        14.0         20.0     0.843      0.115   -72.805 -84.113  -59.548

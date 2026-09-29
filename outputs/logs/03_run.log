@@ -1,0 +1,50 @@
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | ==============================================================================
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | STEP 3 - scene-level SAR metrics, matching rates and densities
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | ==============================================================================
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | ==============================================================================
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | STEP 3 - scene metrics for AOI 'hormuz_core'
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | ==============================================================================
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | loaded 570 scenes, 21958 AOI detections, 357 acquisition dates
+2026-09-26 20:40:55 | WARNING | 03_build_scene_metrics | platform S1C appears in 19 footprint(s) between 2025-09-28 and 2025-10-29 but has 0 detections: excluded from primary metrics (footprint-only acquisition)
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | wrote D:\code\hormuzship\data\processed\sar_scene_metrics.parquet (570 scenes)
+2026-09-26 20:40:55 | WARNING | 03_build_scene_metrics | count identity n_total == n_matched + n_unmatched failed for 1 scene(s) (0.00% of detections carry an unknown match label); see scene_count_anomalies.csv
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | coverage threshold 0.30 keeps 205/570 scenes (36.0%) carrying 15299 detections
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | [ledger:build_scene_metrics] orphan_detections_excluded                 before=21958     after=21716     removed=242       (1.10%) | scene_id not present in the footprint table, so coverage/density is undefined
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | [ledger:build_scene_metrics] platform_without_detections_excluded       before=570       after=551       removed=19        (3.33%) | footprint-only platform with zero detections in the whole window
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | [ledger:build_scene_metrics] primary_analysis_sample                    before=570       after=205       removed=365       (64.04%) | coverage_fraction < sar.min_scene_coverage_fraction (0.3) or platform has no detections in the archive
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | wrote D:\code\hormuzship\outputs\tables\data_coverage.csv
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | wrote D:\code\hormuzship\data\processed\sar_weekly.parquet (123 weeks with at least one usable scene)
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | wrote D:\code\hormuzship\outputs\tables\detection_composition_by_month.csv
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | wrote D:\code\hormuzship\outputs\tables\matching_rate_by_length_bin.csv
+2026-09-26 20:40:55 | INFO    | 03_build_scene_metrics | running the archive-wide match-label check (pipeline-artifact test; AOI-independent, so it runs once per AOI-agnostic pipeline pass)
+2026-09-26 20:40:56 | INFO    | 03_build_scene_metrics | global label check 202401 (pipeline 20231026): unmatched share 0.3415 over 216234 detections
+2026-09-26 20:40:56 | INFO    | 03_build_scene_metrics | global label check 202402 (pipeline 20231026): unmatched share 0.3454 over 191043 detections
+2026-09-26 20:40:56 | INFO    | 03_build_scene_metrics | global label check 202403 (pipeline 20231026): unmatched share 0.3419 over 244407 detections
+2026-09-26 20:40:56 | INFO    | 03_build_scene_metrics | global label check 202404 (pipeline 20231026): unmatched share 0.3523 over 233664 detections
+2026-09-26 20:40:57 | INFO    | 03_build_scene_metrics | global label check 202405 (pipeline 20231026): unmatched share 0.3493 over 217879 detections
+2026-09-26 20:40:57 | INFO    | 03_build_scene_metrics | global label check 202406 (pipeline 20231026): unmatched share 0.3094 over 200341 detections
+2026-09-26 20:40:57 | INFO    | 03_build_scene_metrics | global label check 202407 (pipeline 20231026): unmatched share 0.3327 over 213200 detections
+2026-09-26 20:40:58 | INFO    | 03_build_scene_metrics | global label check 202408 (pipeline 20231026): unmatched share 0.3323 over 257940 detections
+2026-09-26 20:40:58 | INFO    | 03_build_scene_metrics | global label check 202409 (pipeline 20231026): unmatched share 0.3425 over 257743 detections
+2026-09-26 20:40:58 | INFO    | 03_build_scene_metrics | global label check 202410 (pipeline 20231026): unmatched share 0.3559 over 268681 detections
+2026-09-26 20:40:59 | INFO    | 03_build_scene_metrics | global label check 202411 (pipeline 3): unmatched share 0.3543 over 248247 detections
+2026-09-26 20:40:59 | INFO    | 03_build_scene_metrics | global label check 202412 (pipeline 3): unmatched share 0.3462 over 239081 detections
+2026-09-26 20:40:59 | INFO    | 03_build_scene_metrics | global label check 202501 (pipeline 3): unmatched share 0.3385 over 221615 detections
+2026-09-26 20:40:59 | INFO    | 03_build_scene_metrics | global label check 202502 (pipeline 3): unmatched share 0.3469 over 192530 detections
+2026-09-26 20:41:00 | INFO    | 03_build_scene_metrics | global label check 202503 (pipeline 3): unmatched share 0.3424 over 208030 detections
+2026-09-26 20:41:00 | INFO    | 03_build_scene_metrics | global label check 202504 (pipeline 3): unmatched share 0.3346 over 229374 detections
+2026-09-26 20:41:00 | INFO    | 03_build_scene_metrics | global label check 202505 (pipeline 3): unmatched share 0.3349 over 213368 detections
+2026-09-26 20:41:00 | INFO    | 03_build_scene_metrics | global label check 202506 (pipeline 3): unmatched share 0.3866 over 199813 detections
+2026-09-26 20:41:01 | INFO    | 03_build_scene_metrics | global label check 202507 (pipeline 3): unmatched share 0.3217 over 191171 detections
+2026-09-26 20:41:01 | INFO    | 03_build_scene_metrics | global label check 202508 (pipeline 3): unmatched share 0.3818 over 224905 detections
+2026-09-26 20:41:01 | INFO    | 03_build_scene_metrics | global label check 202509 (pipeline 3): unmatched share 0.3468 over 285628 detections
+2026-09-26 20:41:02 | INFO    | 03_build_scene_metrics | global label check 202510 (pipeline 3): unmatched share 0.4001 over 277263 detections
+2026-09-26 20:41:02 | INFO    | 03_build_scene_metrics | global label check 202511 (pipeline 3): unmatched share 0.3876 over 247581 detections
+2026-09-26 20:41:02 | INFO    | 03_build_scene_metrics | global label check 202512 (pipeline 3): unmatched share 0.3828 over 256924 detections
+2026-09-26 20:41:02 | INFO    | 03_build_scene_metrics | global label check 202601 (pipeline 3): unmatched share 0.3750 over 243856 detections
+2026-09-26 20:41:03 | INFO    | 03_build_scene_metrics | global label check 202602 (pipeline 3): unmatched share 0.3796 over 185481 detections
+2026-09-26 20:41:03 | INFO    | 03_build_scene_metrics | global label check 202603 (pipeline 4): unmatched share 0.3821 over 243126 detections
+2026-09-26 20:41:03 | INFO    | 03_build_scene_metrics | global label check 202604 (pipeline 4): unmatched share 0.3941 over 244532 detections
+2026-09-26 20:41:03 | INFO    | 03_build_scene_metrics | global label check 202605 (pipeline 4): unmatched share 0.4379 over 193199 detections
+2026-09-26 20:41:03 | INFO    | 03_build_scene_metrics | wrote D:\code\hormuzship\outputs\diagnostics\global_archive_label_share.csv
+2026-09-26 20:41:03 | INFO    | 03_build_scene_metrics | STEP 3 summary: {'aoi_key': 'hormuz_core', 'n_scenes_total': 570, 'n_scenes_used': 205, 'coverage_threshold': 0.3, 'n_detections_total': 21716, 'n_detections_used': 15299, 'pooled_matching_rate_used': 0.49241730945221596, 'n_scenes_with_unknown_labels': 1, 'n_weeks_with_sar': 123, 'weeks_min_date': '2024-01-01', 'weeks_max_date': '2026-05-18', 'unsupported_platforms_excluded': ['S1C']}

@@ -1,0 +1,3 @@
+satellite_platform,n_scenes,n_scenes_above_coverage_threshold,n_detections,median_coverage_km2,median_coverage_fraction,first_scene_date,last_scene_date,detections_per_scene,interpretation
+S1A,271,204,1139,2373.8448948803784,0.5524653630630026,2024-01-06,2026-05-24,4.202952029520295,has detections
+S1C,7,4,0,2203.197690530069,0.512750607515829,2025-10-02,2025-10-26,0.0,footprint-only platform: no detections at all in the archive window

@@ -1,0 +1,242 @@
+{
+  "primary_break": {
+    "break_date": "2026-03-01",
+    "before_month": "2026-02",
+    "after_month": "2026-03"
+  },
+  "placebo_pairs": [
+    [
+      "2024-02",
+      "2024-03"
+    ],
+    [
+      "2025-02",
+      "2025-03"
+    ]
+  ],
+  "units": [
+    "hormuz_core",
+    "hormuz_narrow_strait",
+    "gibraltar_strait",
+    "singapore_strait",
+    "english_channel_dover",
+    "global_all_regions",
+    "region:indian_ocean",
+    "region:mediterranean",
+    "region:north_atlantic",
+    "region:north_pacific",
+    "region:north_west_europe",
+    "region:other",
+    "region:south_america_atl",
+    "region:south_east_asia",
+    "region:west_africa"
+  ],
+  "primary_break_deltas": [
+    {
+      "unit": "hormuz_core",
+      "unit_type": "hormuz_aoi",
+      "n_classified_before": 516,
+      "n_classified_after": 265,
+      "pooled_rate_before": 0.4573643410852713,
+      "pooled_rate_after": 0.2679245283018868,
+      "delta_pp": -18.943981278338452,
+      "delta_ci_low_pp": -26.157206719590505,
+      "delta_ci_high_pp": -9.37411846411846,
+      "standardised_delta_pp": -19.944422518579607,
+      "standardised_bins_used": "[0,50),[50,100),[100,150),[150,200),[200,300)"
+    },
+    {
+      "unit": "hormuz_narrow_strait",
+      "unit_type": "hormuz_aoi",
+      "n_classified_before": 85,
+      "n_classified_after": 11,
+      "pooled_rate_before": 0.8588235294117647,
+      "pooled_rate_after": 0.09090909090909091,
+      "delta_pp": -76.79144385026737,
+      "delta_ci_low_pp": -89.47368421052632,
+      "delta_ci_high_pp": -58.73796791443851,
+      "standardised_delta_pp": NaN,
+      "standardised_bins_used": ""
+    },
+    {
+      "unit": "gibraltar_strait",
+      "unit_type": "technical_reference_corridor",
+      "n_classified_before": 146,
+      "n_classified_after": 177,
+      "pooled_rate_before": 0.910958904109589,
+      "pooled_rate_after": 0.9265536723163842,
+      "delta_pp": 1.5594768206795173,
+      "delta_ci_low_pp": -5.919394721862221,
+      "delta_ci_high_pp": 11.534140383153918,
+      "standardised_delta_pp": -4.969730324711041,
+      "standardised_bins_used": "[100,150),[150,200)"
+    },
+    {
+      "unit": "singapore_strait",
+      "unit_type": "technical_reference_corridor",
+      "n_classified_before": 652,
+      "n_classified_after": 513,
+      "pooled_rate_before": 0.9570552147239264,
+      "pooled_rate_after": 0.9532163742690059,
+      "delta_pp": -0.38388404549205557,
+      "delta_ci_low_pp": -3.5525871019146726,
+      "delta_ci_high_pp": 3.5209943400838606,
+      "standardised_delta_pp": 0.00503214564682164,
+      "standardised_bins_used": "[0,50),[50,100),[100,150),[150,200),[200,300)"
+    },
+    {
+      "unit": "english_channel_dover",
+      "unit_type": "technical_reference_corridor",
+      "n_classified_before": 101,
+      "n_classified_after": 182,
+      "pooled_rate_before": 0.8811881188118812,
+      "pooled_rate_after": 0.8571428571428571,
+      "delta_pp": -2.40452616690241,
+      "delta_ci_low_pp": -14.329493381627165,
+      "delta_ci_high_pp": 7.619047619047626,
+      "standardised_delta_pp": -1.749999999999996,
+      "standardised_bins_used": "[150,200)"
+    },
+    {
+      "unit": "global_all_regions",
+      "unit_type": "global_archive",
+      "n_classified_before": 185481,
+      "n_classified_after": 243126,
+      "pooled_rate_before": 0.6203654282648897,
+      "pooled_rate_after": 0.617860697745202,
+      "delta_pp": -0.25047305196876923,
+      "delta_ci_low_pp": -2.615189175106745,
+      "delta_ci_high_pp": 2.269336923147912,
+      "standardised_delta_pp": 0.24135589893823362,
+      "standardised_bins_used": "[0,50),[50,100),[100,150),[150,200),[200,300),[300,100000)"
+    },
+    {
+      "unit": "region:indian_ocean",
+      "unit_type": "global_region",
+      "n_classified_before": 20832,
+      "n_classified_after": 24356,
+      "pooled_rate_before": 0.3057315668202765,
+      "pooled_rate_after": 0.3074396452619478,
+      "delta_pp": 0.1708078441671257,
+      "delta_ci_low_pp": -5.414197259244559,
+      "delta_ci_high_pp": 5.551287512574687,
+      "standardised_delta_pp": -1.9922003865787408,
+      "standardised_bins_used": "[0,50),[50,100),[100,150),[150,200),[200,300),[300,100000)"
+    },
+    {
+      "unit": "region:mediterranean",
+      "unit_type": "global_region",
+      "n_classified_before": 19007,
+      "n_classified_after": 25680,
+      "pooled_rate_before": 0.6753301415268059,
+      "pooled_rate_after": 0.692601246105919,
+      "delta_pp": 1.7271104579113072,
+      "delta_ci_low_pp": -2.0025210187152522,
+      "delta_ci_high_pp": 5.22905631651764,
+      "standardised_delta_pp": 2.39994589219914,
+      "standardised_bins_used": "[0,50),[50,100),[100,150),[150,200),[200,300),[300,100000)"
+    },
+    {
+      "unit": "region:north_atlantic",
+      "unit_type": "global_region",
+      "n_classified_before": 17525,
+      "n_classified_after": 22945,
+      "pooled_rate_before": 0.7730099857346647,
+      "pooled_rate_after": 0.7630856395728917,
+      "delta_pp": -0.9924346161773068,
+      "delta_ci_low_pp": -3.7866170379787873,
+      "delta_ci_high_pp": 1.9792484376147477,
+      "standardised_delta_pp": 1.3237460106857113,
+      "standardised_bins_used": "[0,50),[50,100),[100,150),[150,200),[200,300),[300,100000)"
+    },
+    {
+      "unit": "region:north_pacific",
+      "unit_type": "global_region",
+      "n_classified_before": 5440,
+      "n_classified_after": 6742,
+      "pooled_rate_before": 0.6193014705882353,
+      "pooled_rate_after": 0.6150993770394542,
+      "delta_pp": -0.4202093548781094,
+      "delta_ci_low_pp": -16.29441908933909,
+      "delta_ci_high_pp": 15.83838039327781,
+      "standardised_delta_pp": 0.21403522877339043,
+      "standardised_bins_used": "[0,50),[50,100),[100,150),[150,200),[200,300),[300,100000)"
+    },
+    {
+      "unit": "region:north_west_europe",
+      "unit_type": "global_region",
+      "n_classified_before": 11502,
+      "n_classified_after": 16406,
+      "pooled_rate_before": 0.8233350721613633,
+      "pooled_rate_after": 0.8222601487260758,
+      "delta_pp": -0.10749234352874781,
+      "delta_ci_low_pp": -3.307933068395009,
+      "delta_ci_high_pp": 3.2375553298779947,
+      "standardised_delta_pp": 0.3317902549887397,
+      "standardised_bins_used": "[0,50),[50,100),[100,150),[150,200),[200,300),[300,100000)"
+    },
+    {
+      "unit": "region:other",
+      "unit_type": "global_region",
+      "n_classified_before": 65033,
+      "n_classified_after": 81937,
+      "pooled_rate_before": 0.6652776282810265,
+      "pooled_rate_after": 0.6476073080537487,
+      "delta_pp": -1.767032022727788,
+      "delta_ci_low_pp": -6.299383416460993,
+      "delta_ci_high_pp": 2.978425107370368,
+      "standardised_delta_pp": -1.6715855843256522,
+      "standardised_bins_used": "[0,50),[50,100),[100,150),[150,200),[200,300),[300,100000)"
+    },
+    {
+      "unit": "region:south_america_atl",
+      "unit_type": "global_region",
+      "n_classified_before": 1503,
+      "n_classified_after": 2143,
+      "pooled_rate_before": 0.6979374584165003,
+      "pooled_rate_after": 0.7204853009799347,
+      "delta_pp": 2.254784256343434,
+      "delta_ci_low_pp": -8.497991537845445,
+      "delta_ci_high_pp": 12.952219053346465,
+      "standardised_delta_pp": 0.5627318577934637,
+      "standardised_bins_used": "[0,50),[50,100),[100,150),[150,200),[200,300),[300,100000)"
+    },
+    {
+      "unit": "region:south_east_asia",
+      "unit_type": "global_region",
+      "n_classified_before": 39119,
+      "n_classified_after": 56000,
+      "pooled_rate_before": 0.5403767989979293,
+      "pooled_rate_after": 0.5336071428571428,
+      "delta_pp": -0.6769656140786506,
+      "delta_ci_low_pp": -5.835212679418205,
+      "delta_ci_high_pp": 4.340408555378986,
+      "standardised_delta_pp": 1.599270649580209,
+      "standardised_bins_used": "[0,50),[50,100),[100,150),[150,200),[200,300),[300,100000)"
+    },
+    {
+      "unit": "region:west_africa",
+      "unit_type": "global_region",
+      "n_classified_before": 5520,
+      "n_classified_after": 6917,
+      "pooled_rate_before": 0.7286231884057971,
+      "pooled_rate_after": 0.7675292756975567,
+      "delta_pp": 3.8906087291759595,
+      "delta_ci_low_pp": -1.1044942279659795,
+      "delta_ci_high_pp": 8.849412431095367,
+      "standardised_delta_pp": 2.262624730811802,
+      "standardised_bins_used": "[0,50),[50,100),[100,150),[150,200),[200,300),[300,100000)"
+    }
+  ],
+  "spatial_cell_degrees": 0.05,
+  "length_bins_m": [
+    0,
+    50,
+    100,
+    150,
+    200,
+    300,
+    100000
+  ],
+  "small_sample_min_detections": 30
+}

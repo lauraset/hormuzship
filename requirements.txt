@@ -1,0 +1,14 @@
+# Python 3.11+ (developed and verified on CPython 3.12)
+pandas>=2.1
+numpy>=1.26
+geopandas>=0.14
+shapely>=2.0
+pyarrow>=14.0
+pyproj>=3.6
+scipy>=1.11
+statsmodels>=0.14
+requests>=2.31
+matplotlib>=3.8
+PyYAML>=6.0
+python-dotenv>=1.0
+pytest>=7.4

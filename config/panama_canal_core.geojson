@@ -1,0 +1,38 @@
+{
+  "type": "FeatureCollection",
+  "name": "panama_canal_core",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "panama_canal_core",
+        "description": "Panama Canal event AOI: the main transit corridor from the Pacific-side entrance through the canal system (Miraflores / Pedro Miguel locks, Gaillard Cut, Gatun Lake) toward the Atlantic-side Gatun locks.",
+        "crs_epsg": 4326,
+        "role": "event_aoi_multievent",
+        "source": "geography_defined",
+        "definition": "fixed screening bbox [-79.95, 8.85, -79.50, 9.35]",
+        "pre_specified": true,
+        "defined_before_results": true,
+        "tuned_on_results": false,
+        "navigation_rationale": "Covers the canal system where the drought restrictions bound daily transit slots; chosen from the navigation geography before any matching-rate result for this area was inspected.",
+        "caveat": "The box contains substantial land (canal watershed). The footprint-derived water-observable denominator must be used for coverage, not the bounding-box area."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-79.95, 8.85],
+            [-79.50, 8.85],
+            [-79.50, 9.35],
+            [-79.95, 9.35],
+            [-79.95, 8.85]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "type": "FeatureCollection",
+  "name": "bab_el_mandeb_core",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "bab_el_mandeb_core",
+        "description": "Red Sea event AOI: the Bab el-Mandeb strait itself plus the immediate southern Red Sea approach, the chokepoint every Red Sea transit must pass.",
+        "crs_epsg": 4326,
+        "role": "event_aoi_multievent",
+        "source": "geography_defined",
+        "definition": "bbox [43.10, 12.30, 43.65, 12.95]",
+        "pre_specified": true,
+        "defined_before_results": true,
+        "navigation_rationale": "The strait is the single narrow transit point of the southern Red Sea; traffic rerouted around the Cape of Good Hope never passes it. Chosen from the navigation chart, not from matching-rate results.",
+        "caveat": "The box is ~60 x 72 km, smaller than one Sentinel-1 IW scene, so coverage fraction should be high."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [43.10, 12.30],
+            [43.65, 12.30],
+            [43.65, 12.95],
+            [43.10, 12.95],
+            [43.10, 12.30]
+          ]
+        ]
+      }
+    }
+  ]
+}

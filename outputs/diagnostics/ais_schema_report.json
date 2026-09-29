@@ -1,0 +1,280 @@
+[
+  {
+    "n_rows": 323968,
+    "columns": {
+      "Lat": {
+        "dtype": "float64",
+        "missing_rate": 0.0,
+        "n_unique": 46
+      },
+      "Lon": {
+        "dtype": "float64",
+        "missing_rate": 0.0,
+        "n_unique": 25
+      },
+      "Time Range": {
+        "dtype": "object",
+        "missing_rate": 0.0,
+        "n_unique": 729,
+        "example_values": [
+          "2019-01-21",
+          "2019-01-12",
+          "2019-01-07",
+          "2019-01-13",
+          "2019-01-26"
+        ]
+      },
+      "Vessel ID": {
+        "dtype": "object",
+        "missing_rate": 0.0,
+        "n_unique": 11880,
+        "example_values": [
+          "f65ad8a5d-d9c8-b76a-2784-215fc55d0d99",
+          "0bb0152ca-a99d-2f32-dfe8-bffb74d245b0",
+          "2d12b9dd1-18f1-d80d-19d7-695b71ecbadf",
+          "88f9c676f-f1c4-2e62-3884-904923feb5db",
+          "db448612a-abd2-706b-aa19-140a1f95c5c6"
+        ]
+      },
+      "Flag": {
+        "dtype": "object",
+        "missing_rate": 0.002105146187277756,
+        "n_unique": 104,
+        "example_values": [
+          "MHL",
+          "EGY",
+          "ETH",
+          "KOR",
+          "MLT"
+        ]
+      },
+      "Vessel Name": {
+        "dtype": "object",
+        "missing_rate": 0.001796473725800079,
+        "n_unique": 11433,
+        "example_values": [
+          "SEA BREEZE",
+          "SALAM 6",
+          "BATTAL2",
+          "NESR5",
+          "MEKELE"
+        ]
+      },
+      "Entry Timestamp": {
+        "dtype": "object",
+        "missing_rate": 0.0,
+        "n_unique": 10603,
+        "example_values": [
+          "2019-01-21T04:00:00Z",
+          "2019-01-01T00:00:00Z",
+          "2019-01-01T06:00:00Z",
+          "2019-01-04T20:00:00Z",
+          "2019-01-19T06:00:00Z"
+        ]
+      },
+      "Exit Timestamp": {
+        "dtype": "object",
+        "missing_rate": 0.0,
+        "n_unique": 9691,
+        "example_values": [
+          "2019-01-21T16:00:00Z",
+          "2019-01-31T23:00:00Z",
+          "2019-01-31T13:00:00Z",
+          "2019-01-05T11:00:00Z",
+          "2019-01-19T08:00:00Z"
+        ]
+      },
+      "Gear Type": {
+        "dtype": "object",
+        "missing_rate": 0.0030249901224812326,
+        "n_unique": 22,
+        "example_values": [
+          "CARGO",
+          "OTHER",
+          "BUNKER",
+          "SEISMIC_VESSEL",
+          "PASSENGER"
+        ],
+        "value_counts": {
+          "CARGO": 166921,
+          "OTHER": 90014,
+          "TANKER": 31198,
+          "OTHER_NON_FISHING": 23892,
+          "PASSENGER": 4169,
+          "BUNKER": 3543,
+          "INCONCLUSIVE": 982,
+          "CARRIER": 538,
+          "TRAWLERS": 466,
+          "SEISMIC_VESSEL": 439,
+          "INACTIVE": 307,
+          "CARGO_OR_TANKER": 208,
+          "DREDGE_NON_FISHING": 91,
+          "FISHING": 83,
+          "PATROL_VESSEL": 44,
+          "TUNA_PURSE_SEINES": 36,
+          "GEAR": 19,
+          "INSUFFICIENT_DATA": 16,
+          "SEINERS": 12,
+          "OTHER_PURSE_SEINES": 5,
+          "SET_LONGLINES": 3,
+          "TROLLERS": 2
+        }
+      },
+      "Vessel Type": {
+        "dtype": "object",
+        "missing_rate": 0.0015001481627815094,
+        "n_unique": 10,
+        "example_values": [
+          "CARGO",
+          "OTHER",
+          "BUNKER",
+          "SEISMIC_VESSEL",
+          "PASSENGER"
+        ],
+        "value_counts": {
+          "CARGO": 167400,
+          "OTHER": 90184,
+          "OTHER_NON_FISHING": 55542,
+          "PASSENGER": 4212,
+          "BUNKER": 3543,
+          "FISHING": 1594,
+          "CARRIER": 538,
+          "SEISMIC_VESSEL": 439,
+          "INSUFFICIENT_DATA": 16,
+          "GEAR": 14
+        }
+      },
+      "MMSI": {
+        "dtype": "float64",
+        "missing_rate": 0.0015001481627815094,
+        "n_unique": 11822
+      },
+      "IMO": {
+        "dtype": "float64",
+        "missing_rate": 0.027462588897668904,
+        "n_unique": 11132
+      },
+      "CallSign": {
+        "dtype": "object",
+        "missing_rate": 0.05085687475306203,
+        "n_unique": 11740,
+        "example_values": [
+          "V7II8",
+          "6AFJ",
+          "SUUE",
+          "SSMS",
+          "ETMK"
+        ]
+      },
+      "First Transmission Date": {
+        "dtype": "object",
+        "missing_rate": 0.0015001481627815094,
+        "n_unique": 11715,
+        "example_values": [
+          "2016-07-27T00:49:06Z",
+          "2012-02-12T20:39:10Z",
+          "2012-09-17T20:11:03Z",
+          "2012-09-16T18:41:44Z",
+          "2013-08-04T02:38:39Z"
+        ]
+      },
+      "Last Transmission Date": {
+        "dtype": "object",
+        "missing_rate": 0.0015001481627815094,
+        "n_unique": 7493,
+        "example_values": [
+          "2023-09-30T21:37:30Z",
+          "2026-09-24T23:57:14Z",
+          "2026-03-22T02:39:47Z",
+          "2026-02-01T07:26:42Z",
+          "2026-09-24T23:53:14Z"
+        ]
+      },
+      "Vessel Presence Hours": {
+        "dtype": "float64",
+        "missing_rate": 0.0,
+        "n_unique": 24
+      },
+      "_cache_file": {
+        "dtype": "object",
+        "missing_rate": 0.0,
+        "n_unique": 26,
+        "example_values": [
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-01-01_2019-01-31.zip",
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-02-01_2019-02-28.zip",
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-03-01_2019-03-31.zip",
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-04-01_2019-04-30.zip",
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-05-01_2019-05-31.zip"
+        ],
+        "value_counts": {
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-03-01_2021-02-28.zip": 98266,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2021-03-01_2021-05-31.zip": 27730,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2021-04-01_2021-04-30.zip": 9825,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2021-05-01_2021-05-31.zip": 9674,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-04-01_2020-04-30.zip": 9016,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-01-01_2020-01-31.zip": 9002,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-12-01_2019-12-31.zip": 8954,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-03-01_2020-03-31.zip": 8745,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-11-01_2020-11-30.zip": 8609,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-12-01_2020-12-31.zip": 8490,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-10-01_2020-10-31.zip": 8474,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2021-01-01_2021-01-31.zip": 8457,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-11-01_2019-11-30.zip": 8446,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2021-03-01_2021-03-31.zip": 8231,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-09-01_2020-09-30.zip": 8132,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-02-01_2020-02-29.zip": 8113,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2021-02-01_2021-02-28.zip": 8083,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-05-01_2020-05-31.zip": 8071,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-03-01_2019-03-31.zip": 8006,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-08-01_2020-08-31.zip": 7734,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-01-01_2019-01-31.zip": 7663,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-04-01_2019-04-30.zip": 7663,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-07-01_2020-07-31.zip": 7401,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-05-01_2019-05-31.zip": 7307,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-06-01_2020-06-30.zip": 7054,
+          "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-02-01_2019-02-28.zip": 6822
+        }
+      }
+    },
+    "roles": {
+      "date": "Time Range",
+      "presence_hours": "Vessel Presence Hours",
+      "vessel_id": "Vessel ID",
+      "vessel_type": "Vessel Type",
+      "gear_type": "Gear Type",
+      "flag": "Flag",
+      "lat": "Lat",
+      "lon": "Lon",
+      "mmsi": "MMSI"
+    },
+    "aoi_key": "suez_canal_core",
+    "cached_files": [
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-01-01_2019-01-31.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-02-01_2019-02-28.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-03-01_2019-03-31.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-04-01_2019-04-30.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-05-01_2019-05-31.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-11-01_2019-11-30.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2019-12-01_2019-12-31.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-01-01_2020-01-31.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-02-01_2020-02-29.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-03-01_2020-03-31.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-03-01_2021-02-28.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-04-01_2020-04-30.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-05-01_2020-05-31.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-06-01_2020-06-30.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-07-01_2020-07-31.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-08-01_2020-08-31.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-09-01_2020-09-30.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-10-01_2020-10-31.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-11-01_2020-11-30.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2020-12-01_2020-12-31.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2021-01-01_2021-01-31.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2021-02-01_2021-02-28.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2021-03-01_2021-03-31.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2021-03-01_2021-05-31.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2021-04-01_2021-04-30.zip",
+      "ais_presence_suez_canal_core_public-global-presence_v4.0_2021-05-01_2021-05-31.zip"
+    ]
+  }
+]

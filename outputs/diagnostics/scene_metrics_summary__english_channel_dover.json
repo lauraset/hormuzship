@@ -1,0 +1,16 @@
+{
+  "aoi_key": "english_channel_dover",
+  "n_scenes_total": 298,
+  "n_scenes_used": 202,
+  "coverage_threshold": 0.3,
+  "n_detections_total": 4083,
+  "n_detections_used": 4069,
+  "pooled_matching_rate_used": 0.8940771688375522,
+  "n_scenes_with_unknown_labels": 0,
+  "n_weeks_with_sar": 121,
+  "weeks_min_date": "2024-01-01",
+  "weeks_max_date": "2026-05-18",
+  "unsupported_platforms_excluded": [
+    "S1C"
+  ]
+}

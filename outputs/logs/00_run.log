@@ -1,0 +1,78 @@
+2026-09-26 17:40:03 | INFO    | 00_inspect_data | ==============================================================================
+2026-09-26 17:40:03 | INFO    | 00_inspect_data | STEP 0 - GFW SAR schema discovery
+2026-09-26 17:40:03 | INFO    | 00_inspect_data | ==============================================================================
+2026-09-26 17:40:03 | INFO    | 00_inspect_data | discovered 117 detections files (201701 .. 202609)
+2026-09-26 17:40:03 | INFO    | 00_inspect_data | discovered 117 footprints files (201701 .. 202609)
+2026-09-26 17:40:03 | INFO    | 00_inspect_data | [ledger:sar_file_discovery] drop_partial_month:detections:202408       before=2         after=1         removed=1         (50.00%) | full-month file already available for this month
+2026-09-26 17:40:03 | INFO    | 00_inspect_data | [ledger:sar_file_discovery] drop_partial_month:detections:202411       before=2         after=1         removed=1         (50.00%) | full-month file already available for this month
+2026-09-26 17:40:03 | INFO    | 00_inspect_data | loading window 2024-01-01 .. 2026-05-31 contains 29 detection and 29 footprint files
+2026-09-26 17:40:03 | INFO    | 00_inspect_data | profiled signature detections|pipeline=20231026 from sar_vessel_detections_pipev20231026_202401.csv (200000/216234 rows, 10 columns)
+2026-09-26 17:40:04 | INFO    | 00_inspect_data | profiled signature detections|pipeline=3 from sar_vessel_detections_pipev3_202411.csv (200000/248247 rows, 10 columns)
+2026-09-26 17:40:04 | INFO    | 00_inspect_data | profiled signature detections|pipeline=4 from sar_vessel_detections_pipev4_202603.csv (200000/243126 rows, 10 columns)
+2026-09-26 17:40:34 | INFO    | 00_inspect_data | profiled signature footprints|pipeline=n/a from sar_detections_footprints_202401.csv (7497/7497 rows, 5 columns)
+2026-09-26 17:40:34 | INFO    | 00_inspect_data | resolved roles: {'datetime': 'timestamp', 'latitude': 'lat', 'longitude': 'lon', 'scene_id': 'scene_id', 'footprint_scene_id': 'scene_id', 'footprint_wkt': 'footprint_wkt', 'footprint_date': 'date', 'footprint_start_time': 'start_time', 'footprint_end_time': 'end_time', 'match_label': 'matched_category', 'match_value_unmatched': 'unmatched', 'matching_score': 'matching_score', 'presence_score': 'presence_score', 'fishing_score': 'fishing_score', 'mmsi': 'mmsi', 'length_m': 'length_m', 'matched_category': 'matched_category'}
+2026-09-26 17:40:34 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev20231026_202401.csv: 216234 rows
+2026-09-26 17:40:35 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev20231026_202402.csv: 191043 rows
+2026-09-26 17:40:35 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev20231026_202403.csv: 244407 rows
+2026-09-26 17:40:35 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev20231026_202404.csv: 233664 rows
+2026-09-26 17:40:35 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev20231026_202405.csv: 217879 rows
+2026-09-26 17:40:35 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev20231026_202406.csv: 200341 rows
+2026-09-26 17:40:35 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev20231026_202407.csv: 213200 rows
+2026-09-26 17:40:35 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev20231026_202408.csv: 257940 rows
+2026-09-26 17:40:35 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev20231026_202409.csv: 257743 rows
+2026-09-26 17:40:35 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev20231026_202410.csv: 268681 rows
+2026-09-26 17:40:36 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev3_202411.csv: 248247 rows
+2026-09-26 17:40:36 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev3_202412.csv: 239081 rows
+2026-09-26 17:40:36 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev3_202501.csv: 221615 rows
+2026-09-26 17:40:36 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev3_202502.csv: 192530 rows
+2026-09-26 17:40:36 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev3_202503.csv: 208030 rows
+2026-09-26 17:40:36 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev3_202504.csv: 229374 rows
+2026-09-26 17:40:36 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev3_202505.csv: 213368 rows
+2026-09-26 17:40:36 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev3_202506.csv: 199813 rows
+2026-09-26 17:40:36 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev3_202507.csv: 191171 rows
+2026-09-26 17:40:36 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev3_202508.csv: 224905 rows
+2026-09-26 17:40:36 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev3_202509.csv: 285628 rows
+2026-09-26 17:40:37 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev3_202510.csv: 277263 rows
+2026-09-26 17:40:37 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev3_202511.csv: 247581 rows
+2026-09-26 17:40:37 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev3_202512.csv: 256924 rows
+2026-09-26 17:40:37 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev3_202601.csv: 243856 rows
+2026-09-26 17:40:37 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev3_202602.csv: 185481 rows
+2026-09-26 17:40:37 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev4_202603.csv: 243126 rows
+2026-09-26 17:40:37 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev4_202604.csv: 244532 rows
+2026-09-26 17:40:37 | INFO    | 00_inspect_data | scanned sar_vessel_detections_pipev4_202605.csv: 193199 rows
+2026-09-26 17:40:37 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202401.csv: 7497 rows
+2026-09-26 17:40:38 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202402.csv: 6563 rows
+2026-09-26 17:40:38 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202403.csv: 7699 rows
+2026-09-26 17:40:38 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202404.csv: 7233 rows
+2026-09-26 17:40:38 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202405.csv: 7388 rows
+2026-09-26 17:40:38 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202406.csv: 6882 rows
+2026-09-26 17:40:38 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202407.csv: 7338 rows
+2026-09-26 17:40:38 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202408.csv: 7523 rows
+2026-09-26 17:40:39 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202409.csv: 7502 rows
+2026-09-26 17:40:39 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202410.csv: 7988 rows
+2026-09-26 17:40:39 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202411.csv: 7354 rows
+2026-09-26 17:40:39 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202412.csv: 7657 rows
+2026-09-26 17:40:39 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202501.csv: 7241 rows
+2026-09-26 17:40:39 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202502.csv: 6364 rows
+2026-09-26 17:40:39 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202503.csv: 7134 rows
+2026-09-26 17:40:40 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202504.csv: 7169 rows
+2026-09-26 17:40:40 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202505.csv: 6870 rows
+2026-09-26 17:40:40 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202506.csv: 6518 rows
+2026-09-26 17:40:40 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202507.csv: 6744 rows
+2026-09-26 17:40:40 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202508.csv: 6870 rows
+2026-09-26 17:40:40 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202509.csv: 8157 rows
+2026-09-26 17:40:41 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202510.csv: 12906 rows
+2026-09-26 17:40:41 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202511.csv: 6314 rows
+2026-09-26 17:40:41 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202512.csv: 6804 rows
+2026-09-26 17:40:41 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202601.csv: 7405 rows
+2026-09-26 17:40:41 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202602.csv: 5849 rows
+2026-09-26 17:40:41 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202603.csv: 7511 rows
+2026-09-26 17:40:41 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202604.csv: 6301 rows
+2026-09-26 17:40:42 | INFO    | 00_inspect_data | scanned sar_detections_footprints_202605.csv: 5892 rows
+2026-09-26 17:40:42 | INFO    | 00_inspect_data | wrote D:\code\hormuzship\outputs\diagnostics\schema_report.json
+2026-09-26 17:40:42 | INFO    | 00_inspect_data | wrote D:\code\hormuzship\outputs\diagnostics\schema_report.md
+2026-09-26 17:40:42 | INFO    | 00_inspect_data | wrote D:\code\hormuzship\config\schema_mapping.yaml
+2026-09-26 17:40:42 | WARNING | 00_inspect_data | schema discovery produced 2 warning(s):
+2026-09-26 17:40:42 | WARNING | 00_inspect_data |   - multiple detection pipeline versions are present in the archive (20231026, 3, 4); a pipeline change is a technical break and must be treated as such
+2026-09-26 17:40:42 | WARNING | 00_inspect_data |   - partial-month files present in the archive: sar_vessel_detections_pipev4_20260922.csv, sar_detections_footprints_20260922.csv (de-duplicated, see ledger)
+2026-09-26 17:40:42 | INFO    | 00_inspect_data | STEP 0 complete - schema mapping written to D:\code\hormuzship\config\schema_mapping.yaml

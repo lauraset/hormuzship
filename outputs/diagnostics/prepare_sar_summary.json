@@ -1,0 +1,12 @@
+{
+  "aoi_key": "hormuz_core",
+  "aoi_area_km2": 23107.836945715273,
+  "n_scenes_intersecting_aoi": 570,
+  "n_scenes_above_threshold": 213,
+  "min_scene_coverage_fraction": 0.3,
+  "n_aoi_detections": 21958,
+  "n_orphan_detections": 242,
+  "n_acquisition_dates": 357,
+  "date_min": "2024-01-02",
+  "date_max": "2026-05-23"
+}

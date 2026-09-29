@@ -1,0 +1,12 @@
+{
+  "aoi_key": "suez_canal_core",
+  "aoi_area_km2": 1682.491510817309,
+  "n_scenes_intersecting_aoi": 622,
+  "n_scenes_above_threshold": 0,
+  "min_scene_coverage_fraction": 0.3,
+  "n_aoi_detections": 1980,
+  "n_orphan_detections": 0,
+  "n_acquisition_dates": 552,
+  "date_min": "2019-01-01",
+  "date_max": "2021-05-30"
+}

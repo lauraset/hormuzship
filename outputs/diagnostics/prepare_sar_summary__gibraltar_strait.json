@@ -1,0 +1,12 @@
+{
+  "aoi_key": "gibraltar_strait",
+  "aoi_area_km2": 1500.669173280428,
+  "n_scenes_intersecting_aoi": 419,
+  "n_scenes_above_threshold": 214,
+  "min_scene_coverage_fraction": 0.3,
+  "n_aoi_detections": 6971,
+  "n_orphan_detections": 129,
+  "n_acquisition_dates": 277,
+  "date_min": "2024-01-03",
+  "date_max": "2026-05-28"
+}

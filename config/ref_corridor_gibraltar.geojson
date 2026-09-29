@@ -1,0 +1,36 @@
+{
+  "type": "FeatureCollection",
+  "name": "gibraltar_strait",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "gibraltar_strait",
+        "description": "Technical reference corridor for the GFW pipev3 -> pipev4 break test. Strait of Gibraltar, the narrowest east-west commercial transit between the Atlantic and the Mediterranean.",
+        "crs_epsg": 4326,
+        "role": "technical_reference_corridor",
+        "source": "pre_specified_bounding_box",
+        "definition": "bbox [-5.85, 35.85, -5.35, 36.15]",
+        "pre_specified": true,
+        "tuned_on_results": false,
+        "purpose": "Test whether the AIS-SAR matching rate also jumps at 2026-03-01 in an unrelated corridor. NOT a causal control for the Hormuz disruption."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-5.85, 35.85],
+            [-5.35, 35.85],
+            [-5.35, 36.15],
+            [-5.85, 36.15],
+            [-5.85, 35.85]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "events": [
+    "suez_2021",
+    "red_sea_2023"
+  ],
+  "screening_thresholds": {
+    "min_event_scenes": 4,
+    "min_event_detections": 60,
+    "min_event_acquisition_days": 3,
+    "min_median_coverage_fraction": 0.3,
+    "min_placebo_scenes": 4,
+    "strong_requires_same_pipeline": true,
+    "strong_requires_placebo": true,
+    "strong_requires_ais_days": 1
+  },
+  "coverage_denominators": [
+    "coverage_fraction = intersection / AOI bounding-box area",
+    "coverage_fraction_water = intersection / union of all scene intersections"
+  ],
+  "status_by_event": {
+    "red_sea_2023": "CONDITIONAL",
+    "suez_2021": "CONDITIONAL"
+  },
+  "reason_by_event": {
+    "red_sea_2023": "AIS presence unavailable for the event window (report quota / fetch incomplete)",
+    "suez_2021": "event detections 57 < 60; AIS presence unavailable for the event window (report quota / fetch incomplete)"
+  },
+  "note": "Feasibility screening only. No event effect is estimated here, and absolute matching-rate levels must not be compared across events whose GFW pipelines differ."
+}

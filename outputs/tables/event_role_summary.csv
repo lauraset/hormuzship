@@ -1,0 +1,7 @@
+event,role,disruption_type,why_included,statistical_status,inference_strength,event_sar_scenes,event_detections
+hormuz_2026,discovery_case,geopolitical_security,discovery case (frozen),"primary, frozen","high (frozen Phase 3 estimate, cluster-robust, placebo-checked)",,
+redsea_2023,independent_security_validation,geopolitical_security,independent security-driven validation of the Hormuz finding,independent but same pipeline generation as Suez/Panama; not Hormuz,"moderate (868 detections, 108 scenes, 2 placebo years)",14.0,90.0
+panama_2023,non_security_contrast,climate_capacity_disruption,non-security climate/capacity contrast,independent; different pipeline generation from Hormuz,moderate (consistent across two placebo years and a nested AOI),19.0,205.0
+panama_transit_core_2023,non_security_contrast_sensitivity_aoi,climate_capacity_disruption,,,not assessed,38.0,65.0
+bab_mandeb_2026,concurrent_regional_falsification,geopolitical_security,concurrent regional falsification under the same shock and pipeline transition,"NOT independent of Hormuz: same crisis, same pipeline boundary",descriptive (50 event detections; noisy 2025 placebo),7.0,50.0
+suez_2021,supplementary_physical_blockage,physical_blockage,supplementary short-duration physical blockage,descriptive only,"descriptive (7-day event, one acquisition week, 57 detections)",12.0,95.0

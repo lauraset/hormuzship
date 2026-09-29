@@ -1,0 +1,88 @@
+{
+  "cases": [
+    "hormuz_2026",
+    "redsea_2023",
+    "panama_2023",
+    "panama_transit_core_2023",
+    "bab_mandeb_2026",
+    "suez_2021"
+  ],
+  "dimension_a": "SAR_activity_anomaly (historical-normalized)",
+  "dimension_b": "standardized_matching_change_pp (composition-standardized)",
+  "supporting_ais_family": [
+    "AIS_presence_hours_anomaly",
+    "AIS_distinct_vessels_anomaly",
+    "AIS_distinct_vessels_SAR_days_anomaly",
+    "presence_hours_per_vessel_change"
+  ],
+  "no_composite_index": true,
+  "cross_event_headline": [
+    {
+      "event": "hormuz_2026",
+      "case_role": "discovery_case",
+      "SAR_activity_anomaly": -0.7067575644031927,
+      "AIS_distinct_vessels_anomaly": -1.357807677012162,
+      "raw_matching_change_pp": -15.294,
+      "standardized_matching_change_pp": -11.538,
+      "standardized_matching_CI_low": -17.583,
+      "standardized_matching_CI_high": -5.366
+    },
+    {
+      "event": "redsea_2023",
+      "case_role": "independent_security_validation",
+      "SAR_activity_anomaly": -0.2040875489972456,
+      "AIS_distinct_vessels_anomaly": -0.552233341212486,
+      "raw_matching_change_pp": -6.8686868686868685,
+      "standardized_matching_change_pp": -10.340770520358245,
+      "standardized_matching_CI_low": -21.67129564253019,
+      "standardized_matching_CI_high": -3.0916034744066065
+    },
+    {
+      "event": "panama_2023",
+      "case_role": "non_security_contrast",
+      "SAR_activity_anomaly": -0.3007563112359963,
+      "AIS_distinct_vessels_anomaly": -0.2189441523088591,
+      "raw_matching_change_pp": 4.364837398373977,
+      "standardized_matching_change_pp": 4.769200634580873,
+      "standardized_matching_CI_low": 1.942252889751503,
+      "standardized_matching_CI_high": 7.594498381691355
+    },
+    {
+      "event": "panama_transit_core_2023",
+      "case_role": "non_security_contrast_sensitivity_aoi",
+      "SAR_activity_anomaly": -1.4871937432434406,
+      "AIS_distinct_vessels_anomaly": 0.1899776917190068,
+      "raw_matching_change_pp": -7.051282051282048,
+      "standardized_matching_change_pp": NaN,
+      "standardized_matching_CI_low": NaN,
+      "standardized_matching_CI_high": NaN
+    },
+    {
+      "event": "bab_mandeb_2026",
+      "case_role": "concurrent_regional_falsification",
+      "SAR_activity_anomaly": 0.1710184986542646,
+      "AIS_distinct_vessels_anomaly": 0.0966248042640937,
+      "raw_matching_change_pp": -4.421052631578948,
+      "standardized_matching_change_pp": -4.227605257157485,
+      "standardized_matching_CI_low": -19.833636412553183,
+      "standardized_matching_CI_high": 6.172917776210188
+    },
+    {
+      "event": "suez_2021",
+      "case_role": "supplementary_physical_blockage",
+      "SAR_activity_anomaly": 2.1339723719060038,
+      "AIS_distinct_vessels_anomaly": 0.5797309640699022,
+      "raw_matching_change_pp": 0.4160268044115511,
+      "standardized_matching_change_pp": NaN,
+      "standardized_matching_CI_low": NaN,
+      "standardized_matching_CI_high": NaN
+    }
+  ],
+  "interpretations": {
+    "hormuz_2026": "Both dimensions moved: SAR-observed corridor traffic collapsed and the confirmed AIS-SAR matching probability fell after composition standardization. The AIS-based activity measure overstated the decline relative to independent SAR.",
+    "redsea_2023": "Independent security disruption reproduces the Hormuz direction: a composition-standardized matching decline while the same-calendar placebo years show a small increase. Distinct vessels fell far more than presence hours, so part of the AIS activity signal is dwell-driven.",
+    "panama_2023": "Real physical disruption with no observability deterioration: matching probability was stable to slightly higher, and once AIS and SAR are measured on the same water the vessel-count metric agrees with SAR while presence hours understate the decline.",
+    "bab_mandeb_2026": "No Hormuz-like observability collapse under the same regional shock and the same pipeline transition: the standardized change is small and its interval spans zero, and SAR activity is if anything above its placebo weeks.",
+    "suez_2021": "Severe short physical blockage without an observability decline: SAR density inside the AOI rose sharply (congestion) and matching was flat."
+  }
+}

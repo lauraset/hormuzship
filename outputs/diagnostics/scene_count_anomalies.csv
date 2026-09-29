@@ -1,0 +1,2 @@
+scene_id,scene_date_parsed,pipeline,coverage_fraction,n_total,n_matched,n_unmatched,n_unknown,unknown_rate
+S1A_IW_GRDH_1SDV_20260417T021509_20260417T021534_064113_081183_E6A9,2026-04-17,n/a,0.41349923205572986,44,19,24,1,0.022727272727272728

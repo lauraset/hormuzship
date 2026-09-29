@@ -1,0 +1,81 @@
+{
+  "terminology": {
+    "primary_definition": "matched_category != 'unmatched'",
+    "mmsi_present": "MMSI-present diagnostic (NOT a confirmed match)"
+  },
+  "aois": [
+    "hormuz_core",
+    "hormuz_narrow_strait"
+  ],
+  "primary_aoi": "hormuz_core",
+  "bootstrap_unit": "scene",
+  "bootstrap_iterations": 3000,
+  "persistent_phase_matching_rates": [
+    {
+      "aoi_key": "hormuz_core",
+      "year_group": "2026_event",
+      "phase": "persistent_disruption",
+      "n_scenes": 14,
+      "n_detections": 527,
+      "pooled_matching_rate": 0.34980988593155893,
+      "scene_mean_matching_rate": 0.35194958719516567,
+      "pooled_ci_low": 0.27170650565100846,
+      "pooled_ci_high": 0.42105263157894735
+    },
+    {
+      "aoi_key": "hormuz_core",
+      "year_group": "2025_placebo",
+      "phase": "persistent_disruption",
+      "n_scenes": 14,
+      "n_detections": 1255,
+      "pooled_matching_rate": 0.48764940239043825,
+      "scene_mean_matching_rate": 0.48895411909516945,
+      "pooled_ci_low": 0.4618351182757233,
+      "pooled_ci_high": 0.5126013480780038
+    },
+    {
+      "aoi_key": "hormuz_core",
+      "year_group": "2024_placebo",
+      "phase": "persistent_disruption",
+      "n_scenes": 15,
+      "n_detections": 1194,
+      "pooled_matching_rate": 0.5150753768844221,
+      "scene_mean_matching_rate": 0.5199838658033401,
+      "pooled_ci_low": 0.4717126955329683,
+      "pooled_ci_high": 0.5602457723062971
+    },
+    {
+      "aoi_key": "hormuz_narrow_strait",
+      "year_group": "2026_event",
+      "phase": "persistent_disruption",
+      "n_scenes": 14,
+      "n_detections": 19,
+      "pooled_matching_rate": 0.10526315789473684,
+      "scene_mean_matching_rate": 0.125,
+      "pooled_ci_low": 0.0,
+      "pooled_ci_high": 0.2777777777777778
+    },
+    {
+      "aoi_key": "hormuz_narrow_strait",
+      "year_group": "2025_placebo",
+      "phase": "persistent_disruption",
+      "n_scenes": 14,
+      "n_detections": 199,
+      "pooled_matching_rate": 0.864321608040201,
+      "scene_mean_matching_rate": 0.856506206948489,
+      "pooled_ci_low": 0.8265252416756177,
+      "pooled_ci_high": 0.8960396039603961
+    },
+    {
+      "aoi_key": "hormuz_narrow_strait",
+      "year_group": "2024_placebo",
+      "phase": "persistent_disruption",
+      "n_scenes": 16,
+      "n_detections": 228,
+      "pooled_matching_rate": 0.8070175438596491,
+      "scene_mean_matching_rate": 0.8057885411479646,
+      "pooled_ci_low": 0.7663521058380871,
+      "pooled_ci_high": 0.8443422431865828
+    }
+  ]
+}

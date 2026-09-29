@@ -1,0 +1,14 @@
+{
+  "aoi_key": "panama_transit_core",
+  "n_scenes_total": 142,
+  "n_scenes_used": 0,
+  "coverage_threshold": 0.3,
+  "n_detections_total": 173,
+  "n_detections_used": 0,
+  "pooled_matching_rate_used": 0.0,
+  "n_scenes_with_unknown_labels": 0,
+  "n_weeks_with_sar": 0,
+  "weeks_min_date": null,
+  "weeks_max_date": null,
+  "unsupported_platforms_excluded": []
+}
